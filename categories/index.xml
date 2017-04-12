@@ -10,5 +10,14 @@
 	<atom:link href="https://ehbick01.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Tutorials</title>
+      <link>https://ehbick01.github.io/categories/tutorials/</link>
+      <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ehbick01.github.io/categories/tutorials/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
