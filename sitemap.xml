@@ -57,6 +57,11 @@
   </url>
   
   <url>
+    <loc>https://ehbick01.github.io/2017/04/scraping-whiskey-reviews-using-scrapy/</loc>
+    <lastmod>2017-04-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ehbick01.github.io/contact/index/</loc>
     <lastmod>2016-11-06T13:00:25+05:30</lastmod>
   </url>
@@ -100,6 +105,12 @@
   </url>
   
   <url>
+    <loc>https://ehbick01.github.io/tags/data-collection/</loc>
+    <lastmod>2017-04-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ehbick01.github.io/tags/manipulation/</loc>
     <lastmod>2017-04-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -118,6 +129,12 @@
   </url>
   
   <url>
+    <loc>https://ehbick01.github.io/tags/python/</loc>
+    <lastmod>2017-04-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ehbick01.github.io/tags/r/</loc>
     <lastmod>2017-04-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -125,7 +142,7 @@
   
   <url>
     <loc>https://ehbick01.github.io/tags/</loc>
-    <lastmod>2017-04-11T00:00:00+00:00</lastmod>
+    <lastmod>2017-04-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -144,6 +161,12 @@
   <url>
     <loc>https://ehbick01.github.io/tags/visualization/</loc>
     <lastmod>2017-04-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ehbick01.github.io/tags/web-scraping/</loc>
+    <lastmod>2017-04-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -22,5 +22,16 @@ What the heck even is a tidyverse? tidyverse is a collection of R packages provi
    Package Description     ggplot2 Graphics-building package based on The Grammar of Graphics mapping aesthetics to data visually   tibble Wrapper on traditional dataframes allowing for better printing and viewing data   tidyr Package to easily and quickly get your data into a rectangular format (if not already in one)   readr Super fast package for reading in rectangular data (like csv, tsv, and fwf)   purrr A set of tools for working with functions and vectors for functional programming techniques   dplyr Quickly and efficiently manipulate data with a Grammar of Manipulation (just made that up)    Within each of these there are a handful of other dependencies - not all of which I am going to talk through.</description>
     </item>
     
+    <item>
+      <title>Scraping Whiskey Reviews Using Scrapy</title>
+      <link>https://ehbick01.github.io/2017/04/scraping-whiskey-reviews-using-scrapy/</link>
+      <pubDate>Tue, 04 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ehbick01.github.io/2017/04/scraping-whiskey-reviews-using-scrapy/</guid>
+      <description>Background This is a working document to help understand the first stage of this project - the data grab. It is also a helpful learning tool for myself, as this is the first real spider that I&amp;rsquo;ve created to pull data from a website.
+Setup The initial setup is quick, simply cd into the directory that you want to work in and run -
+scrapy startproject whiskey_reviews  Easy enough.</description>
+    </item>
+    
   </channel>
 </rss>

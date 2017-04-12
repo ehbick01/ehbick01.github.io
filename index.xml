@@ -123,6 +123,17 @@ What the heck even is a tidyverse? tidyverse is a collection of R packages provi
     </item>
     
     <item>
+      <title>Scraping Whiskey Reviews Using Scrapy</title>
+      <link>https://ehbick01.github.io/2017/04/scraping-whiskey-reviews-using-scrapy/</link>
+      <pubDate>Tue, 04 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ehbick01.github.io/2017/04/scraping-whiskey-reviews-using-scrapy/</guid>
+      <description>Background This is a working document to help understand the first stage of this project - the data grab. It is also a helpful learning tool for myself, as this is the first real spider that I&amp;rsquo;ve created to pull data from a website.
+Setup The initial setup is quick, simply cd into the directory that you want to work in and run -
+scrapy startproject whiskey_reviews  Easy enough.</description>
+    </item>
+    
+    <item>
       <title>Get in touch</title>
       <link>https://ehbick01.github.io/contact/index/</link>
       <pubDate>Sun, 06 Nov 2016 13:00:25 +0530</pubDate>
