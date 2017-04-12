@@ -10,41 +10,5 @@
 	<atom:link href="https://ehbick01.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>Features</title>
-      <link>https://ehbick01.github.io/categories/features/</link>
-      <pubDate>Thu, 28 May 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://ehbick01.github.io/categories/features/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R</title>
-      <link>https://ehbick01.github.io/categories/r/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>https://ehbick01.github.io/categories/r/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Releases</title>
-      <link>https://ehbick01.github.io/categories/releases/</link>
-      <pubDate>Mon, 15 Jun 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://ehbick01.github.io/categories/releases/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tranquilpeak</title>
-      <link>https://ehbick01.github.io/categories/tranquilpeak/</link>
-      <pubDate>Mon, 15 Jun 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://ehbick01.github.io/categories/tranquilpeak/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>
