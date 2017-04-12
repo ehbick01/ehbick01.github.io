@@ -368,7 +368,40 @@ life_tables %&gt;% # The pipe operator will 'pipe' our `life_tables` dataframe a
 
 </code></pre>
 
+<p><strong>Build some models</strong></p>
+
+<p>Another use-case for the <code>tidyverse</code> family would be applying a function across a dataframe. In the old days, this would be done either through the <code>apply</code> family or via a good ol&rsquo; <code>for</code> loop. However, with <code>purrr</code> comes the handy <code>map</code> function - which will allow you to <em>map</em> a function across your data.</p>
+
+<p>For example, let&rsquo;s say we want to be crazy and model the propensity of a given name over time. In other words, we are going to model the change in the number of individual names as a function of time. To set this up, we are going to dive back into the <code>babynames</code> package, and export out the dataframe of names.</p>
+
+<pre><code>
+# First, let's nest all of the data for each name into their own column
+by.name &lt;- babynames %&gt;% # Feed the babynames data into the next function
+  group_by(name) %&gt;% # Group the dataframe by name
+  nest() # Nest the grouped data into a list
+
+# We can see that each element within `data` represents the entire data for each group (or in this case, each name)
+glimpse(by.name$data[[1]])
+
+# Now that the data is in this format, we can fit a linear model to each name
+by.name.model &lt;- by.name %&gt;% # Feed the by.name data into the next function 
+  mutate(model = purrr::map(data, ~ lm(n ~ year, data = .)) # Mutate the by.name dataframe to build a new column titled &quot;model&quot;
+)
+
+# Take a glimpse - we now see a new column 'model' housing all of the modeling results
+glimpse(by.name.model)
+
+# We can also now extract model coefficients using `broom::tidy`
+by.name.model %&gt;% # Feed by.name.model dataframe into the next function
+  unnest(model %&gt;% purrr::map(broom::tidy)) # Unnest the contents of the &quot;model&quot; column and output the rownames (coefficients in this case)
+
+</code></pre>
+
 <h3 id="what-else-can-tidyverse-do">What else can <code>tidyverse</code> do?</h3>
+
+<p>There are an insane number of functions embedded into <code>tidyverse</code> - far more than a single tutorial can cover. We hit on some of the main packages today with <code>dplyr</code> for quick data manipulation and <code>ggplot</code> for good-looking visualization, but packages like <code>purrr</code> and <code>tidyr</code> can help to take manipulation even further prior to visualization.</p>
+
+<p>To learn more about how you can use <code>tidyverse</code> and its dependencies, check out <a href="http://tidyverse.org/">the official page</a> or read Hadley Wickham&rsquo;s <a href="http://r4ds.had.co.nz/">R for Data Science</a>. Go make cool stuff!</p>
 
               
             </div>
