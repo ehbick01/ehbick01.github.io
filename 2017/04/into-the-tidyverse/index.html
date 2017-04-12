@@ -433,7 +433,7 @@ life_tables %&gt;%                       # The pipe operator will 'pipe' our `li
 
 <p>For example, let&rsquo;s say we want to be crazy and model the propensity of a given name over time. In other words, we are going to model the change in the number of individual names as a function of time. To set this up, we are going to dive back into the <code>babynames</code> package, and export out the dataframe of names.</p>
 
-<pre><code>
+<pre><code class="language-r, manipulate-and-model-data">
 # First, let's nest all of the data for each name into their own column
 by.name &lt;- babynames %&gt;%              # Feed the babynames data into the next function
 
