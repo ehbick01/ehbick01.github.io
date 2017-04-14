@@ -277,8 +277,9 @@ library(rmarkdown)
 
 <p>R markdown is a filetype (<code>.rmd</code>) that supports <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">markdown syntax</a> and code chunk execution within the RStudio IDE. The beauty of R markdown documents (and their counterpart - R notebooks) is that they allow the analyst to weave their narrative around the data analysis itself. In addition, by running your products in R markdown you can very quickly and easily render the file into new formats that look less codey and more pretty (this post, for instance, was written in R markdown).</p>
 
-<p><strong>How does it work?</strong>
-To set up an R markdown, simply select <code>R Markdown</code> in the dropdown selection when you start a new file.</p>
+<p><strong>How does it work?</strong></p>
+
+<p>To set up an R markdown, simply select <code>R Markdown</code> in the dropdown selection when you start a new file.</p>
 
 <p><img src="https://ehbick01.github.io/img/rmd-new-file-select.PNG" alt="New rmd file" /></p>
 
@@ -290,15 +291,17 @@ To set up an R markdown, simply select <code>R Markdown</code> in the dropdown s
 
 <p><img src="https://ehbick01.github.io/img/rmd-init.PNG" alt="Initial file" /></p>
 
-<p><strong>Front-matter matters</strong>
-At the top of your R markdown document will be &lsquo;YAML front-matter&rsquo; contained within two sets of <code>---</code> - this section will inform <code>knitr</code> how to create the document when we choose to knit it. Since we set up our file parameters to output as HTML, our front-matter designates the output as <code>html_document</code> - and the title and (if we put one in) the author will be displayed here as well.</p>
+<p><strong>Front-matter matters</strong></p>
+
+<p>At the top of your R markdown document will be &lsquo;YAML front-matter&rsquo; contained within two sets of <code>---</code> - this section will inform <code>knitr</code> how to create the document when we choose to knit it. Since we set up our file parameters to output as HTML, our front-matter designates the output as <code>html_document</code> - and the title and (if we put one in) the author will be displayed here as well.</p>
 
 <p><img src="https://ehbick01.github.io/img/rmd-yaml.PNG" alt="YAML" /></p>
 
 <p>It is also possible to include metadata in the front-matter, such as tags or any type of categorization of your post. You can also assign various themes, assign a tabloe of contents, or even reference your own CSS styling to be applied to the final product. I&rsquo;m not going to get into detail with that, but if you&rsquo;re interested checkout RStudio&rsquo;s <a href="http://rmarkdown.rstudio.com/html_document_format.html">tutorials on R markdown here</a>.</p>
 
-<p><strong>Do work(space)</strong>
-Below the YAML front-matter is where the magic <em>really</em> happens - because this is where the actual analysis takes place. When you look at an R markdown document, it is generally cut up by what are called &ldquo;code chunks.&rdquo; These are sections of the document that are surrounding by three backticks. In markdown, ````` denotes a chunk of computer code - and that&rsquo;s the same in R markdown.</p>
+<p><strong>Do work(space)</strong></p>
+
+<p>Below the YAML front-matter is where the magic <em>really</em> happens - because this is where the actual analysis takes place. When you look at an R markdown document, it is generally cut up by what are called &ldquo;code chunks.&rdquo; These are sections of the document that are surrounding by three backticks. In markdown, ````` denotes a chunk of computer code - and that&rsquo;s the same in R markdown.</p>
 
 <p>Along with these three backticks, you will notice a language specification (it&rsquo;s almost <em>always</em> just r, but now <code>knitr</code> supports <a href="http://rmarkdown.rstudio.com/authoring_knitr_engines.html">several different languages</a>) as well as a general section title and some rules about the output of the chunk. When the document is knitted, the chunks will be executed and the results of the code will be displayed in the final output (unless you specifically tell it to be hidden).</p>
 
