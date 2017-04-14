@@ -280,20 +280,20 @@ library(rmarkdown)
 <p><strong>How does it work?</strong>
 To set up an R markdown, simply select <code>R Markdown</code> in the dropdown selection when you start a new file.</p>
 
-<p><img src="https://ehbick01.github.io/img/rmd-new-file-select.png" alt="New rmd file" /></p>
+<p><img src="https://ehbick01.github.io/img/rmd-new-file-select.PNG" alt="New rmd file" /></p>
 
 <p>After you select R markdown, a message window will pop up and ask you some info about the document you will ultimately want to create. This includes the name of the document, the author, and what the final filetype will be (HTML, PDF, or Word). In our case, we are going to choose HTML.</p>
 
-<p><img src="https://ehbick01.github.io/img/rmd-file-params.png" alt="File parameters" /></p>
+<p><img src="https://ehbick01.github.io/img/rmd-file-params.PNG" alt="File parameters" /></p>
 
 <p>Once you&rsquo;ve made your selection, a new R markdown file will open in your Source panel with some stuff already pre-populated throughout. This initial file is sort of a tutorial - it gives a very brief overview of how it is set up and how to use it. We&rsquo;ll talk about each section individually.</p>
 
-<p><img src="https://ehbick01.github.io/img/rmd-init.png" alt="Initial file" /></p>
+<p><img src="https://ehbick01.github.io/img/rmd-init.PNG" alt="Initial file" /></p>
 
 <p><strong>Front-matter matters</strong>
 At the top of your R markdown document will be &lsquo;YAML front-matter&rsquo; contained within two sets of <code>---</code> - this section will inform <code>knitr</code> how to create the document when we choose to knit it. Since we set up our file parameters to output as HTML, our front-matter designates the output as <code>html_document</code> - and the title and (if we put one in) the author will be displayed here as well.</p>
 
-<p><img src="https://ehbick01.github.io/img/rmd-yaml.png" alt="YAML" /></p>
+<p><img src="https://ehbick01.github.io/img/rmd-yaml.PNG" alt="YAML" /></p>
 
 <p>It is also possible to include metadata in the front-matter, such as tags or any type of categorization of your post. You can also assign various themes, assign a tabloe of contents, or even reference your own CSS styling to be applied to the final product. I&rsquo;m not going to get into detail with that, but if you&rsquo;re interested checkout RStudio&rsquo;s <a href="http://rmarkdown.rstudio.com/html_document_format.html">tutorials on R markdown here</a>.</p>
 
@@ -302,11 +302,11 @@ Below the YAML front-matter is where the magic <em>really</em> happens - because
 
 <p>Along with these three backticks, you will notice a language specification (it&rsquo;s almost <em>always</em> just r, but now <code>knitr</code> supports <a href="http://rmarkdown.rstudio.com/authoring_knitr_engines.html">several different languages</a>) as well as a general section title and some rules about the output of the chunk. When the document is knitted, the chunks will be executed and the results of the code will be displayed in the final output (unless you specifically tell it to be hidden).</p>
 
-<p><img src="https://ehbick01.github.io/img/rmd-code-chunk.png" alt="Code chunk" /></p>
+<p><img src="https://ehbick01.github.io/img/rmd-code-chunk.PNG" alt="Code chunk" /></p>
 
 <p>Areas outside of the code chunks - which is everything <em>not</em> surrounded by three backticks - are free text space. The text in this area adheres to markdown syntax, giving the analyst the ability to take full power of the ease in creating formatted text to be rendered. The combination of the free text space and the code execution is fantastic for project work, as you can inject your narrative directly into the analysis itself.</p>
 
-<p><img src="https://ehbick01.github.io/img/rmd-free-text.png" alt="Free text" /></p>
+<p><img src="https://ehbick01.github.io/img/rmd-free-text.PNG" alt="Free text" /></p>
 
 <p>In addition, you can run the script within the IDE just as if it was a plain R script as well - RStudio will execute the code chunks and even display the output of those chunks interactively beneath them within your Source panel if you have the most up-to-date version of RStudio installed. Essentially, R markdown documents are a one-stop shop for running projects in RStudio!</p>
 
@@ -316,11 +316,11 @@ Below the YAML front-matter is where the magic <em>really</em> happens - because
 
 <p>At the top of your Source panel is a button that says, appropriately, &ldquo;Knit.&rdquo; When you click that button a file window will ask you to save your file.</p>
 
-<p><img src="https://ehbick01.github.io/img/rmd-knit.png" alt="Knit" /></p>
+<p><img src="https://ehbick01.github.io/img/rmd-knit.PNG" alt="Knit" /></p>
 
 <p>Once you have named and saved your file, it will begin to be processed and a new file will be created based on the filetype specified in the YAML front-matter we talked about before. Since we have ours set to <code>html_document</code>, an HTML file is created. By default, RStudio will display the new file in a new window for you to view - or you can just open the file to view in a browser (or whatever based on your filetype).</p>
 
-<p><img src="https://ehbick01.github.io/img/rmd-render.png" alt="Render" /></p>
+<p><img src="https://ehbick01.github.io/img/rmd-render.PNG" alt="Render" /></p>
 
 <p>You can then either send the final output on to your final audience, or even host it as a standalone webpage or blogpost - and your analysis, visualizations, and narrative will be available for all to see! Also - this includes interactive charts as well - <code>knitr</code> will appropriately render those as well if you are using interactive plotting packages like <code>plotly</code> which rely on JavaScript libraries.</p>
 
