@@ -1,6 +1,8 @@
 
 
   
+    
+  
 
 
   
@@ -18,7 +20,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.20">
-    <title>Name of the work 6</title>
+    <title>Knitting to Output with Rmarkdown</title>
     <meta name="author" content="Eric Bickel">
     <meta name="keywords" content="">
 
@@ -26,18 +28,18 @@
     
 
     
-    <meta name="description" content="Fifth abundantly made Give sixth hath. Cattle creature i be don&rsquo;t them.
-">
-    <meta property="og:description" content="Fifth abundantly made Give sixth hath. Cattle creature i be don&rsquo;t them.
-">
+    <meta name="description" content="Tutorial&rsquo;s purpose Manipulating data and building visuals is the bread and butter of the R language - but what can get lost in the fold is the ability to easily and quickly push analysis out for folks to see. Using knitr and rmarkdown makes that significantly easier, and exists at the press of a button. In this tutorial, we&rsquo;re going to press those buttons.
+What are the packages? There are a ton of ways to get information from R out into the world - ranging from static Word or PDF documents all the way to interactive web applications.">
+    <meta property="og:description" content="Tutorial&rsquo;s purpose Manipulating data and building visuals is the bread and butter of the R language - but what can get lost in the fold is the ability to easily and quickly push analysis out for folks to see. Using knitr and rmarkdown makes that significantly easier, and exists at the press of a button. In this tutorial, we&rsquo;re going to press those buttons.
+What are the packages? There are a ton of ways to get information from R out into the world - ranging from static Word or PDF documents all the way to interactive web applications.">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Name of the work 6">
-    <meta property="og:url" content="/portfolio/work6/">
+    <meta property="og:title" content="Knitting to Output with Rmarkdown">
+    <meta property="og:url" content="/2017/04/knitting-to-output-with-rmarkdown/">
     <meta property="og:site_name" content="Analytics Sandbox">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Analytics Sandbox">
-    <meta name="twitter:description" content="Fifth abundantly made Give sixth hath. Cattle creature i be don&rsquo;t them.
-">
+    <meta name="twitter:description" content="Tutorial&rsquo;s purpose Manipulating data and building visuals is the bread and butter of the R language - but what can get lost in the fold is the ability to easily and quickly push analysis out for folks to see. Using knitr and rmarkdown makes that significantly easier, and exists at the press of a button. In this tutorial, we&rsquo;re going to press those buttons.
+What are the packages? There are a ton of ways to get information from R out into the world - ranging from static Word or PDF documents all the way to interactive web applications.">
     
       <meta name="twitter:creator" content="@eric_bickel">
     
@@ -74,7 +76,7 @@
 
   <body>
     <div id="blog">
-      <header id="header" data-behavior="1">
+      <header id="header" data-behavior="4">
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
     <a class="header-title-link" href="https://ehbick01.github.io/">Analytics Sandbox</a>
@@ -94,7 +96,7 @@
   
 </header>
 
-      <nav id="sidebar" data-behavior="1">
+      <nav id="sidebar" data-behavior="4">
   <div class="sidebar-container">
     
       <div class="sidebar-profile">
@@ -191,7 +193,7 @@
 
       
 
-      <div id="main" data-behavior="1"
+      <div id="main" data-behavior="4"
         class="
                hasCoverMetaIn
                ">
@@ -201,18 +203,26 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Name of the work 6
+      Knitting to Output with Rmarkdown
     </h1>
   
   <div class="postShorten-meta post-meta">
   
-    <time itemprop="datePublished" datetime="2016-11-05T19:56:17&#43;05:30">
+    <time itemprop="datePublished" datetime="2017-04-13T00:00:00Z">
       
-  November 5, 2016
+  April 13, 2017
 
     </time>
   
   
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://ehbick01.github.io/categories/tutorials">tutorials</a>
+    
+  
+
 
 </div>
 
@@ -220,39 +230,123 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>Fifth abundantly made Give sixth hath. Cattle creature i be don&rsquo;t them.
-</p>
+              
 
-<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+<h3 id="tutorial-s-purpose">Tutorial&rsquo;s purpose</h3>
 
-<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+<p>Manipulating data and building visuals is the bread and butter of the R language - but what can get lost in the fold is the ability to easily and quickly push analysis out for folks to see. Using <code>knitr</code> and <code>rmarkdown</code> makes that significantly easier, and exists at the press of a button. In this tutorial, we&rsquo;re going to press those buttons.</p>
 
-<ol>
-<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-<li>Aliquam tincidunt mauris eu risus.</li>
-</ol>
+<h3 id="what-are-the-packages">What are the packages?</h3>
 
-<blockquote>
-<p>The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn&rsquo;t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.</p>
-</blockquote>
+<p>There are a ton of ways to get information from R out into the world - ranging from static Word or PDF documents all the way to interactive web applications. However, this is going to focus more on the former than the latter - publication of static files (with the possibility of embedding interactive graphics as well).</p>
 
-<h2 id="header-level-2">Header Level 2</h2>
+<p>To do this, we rely heavily on two packages - <code>knitr</code> and <code>rmarkdown</code></p>
 
-<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Package</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
 
-<p>The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn&rsquo;t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.</p>
+<tbody>
+<tr>
+<td><code>rmarkdown</code></td>
+<td>Convert R Markdown documents into HTML, Word, or PDF files</td>
+</tr>
 
-<ul>
-<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-<li>Aliquam tincidunt mauris eu risus.</li>
-</ul>
+<tr>
+<td><code>knitr</code></td>
+<td>Package to build dynamic and flexible reports</td>
+</tr>
+</tbody>
+</table>
 
-<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then</p>
+<p>Using both of these, we can take our R markdown documents and quickly <em>knit</em> them into more user-friendly reports or static web pages, and then render them appropriately. Go ahead and install these and read them in if you haven&rsquo;t already</p>
+
+<pre><code class="language-r, load packages, message = FALSE, warning = FALSE">
+install.packages(c('knitr', 'rmarkdown'))
+
+library(knitr)
+library(rmarkdown)
+
+</code></pre>
+
+<h3 id="first-what-s-r-markdown">First, what&rsquo;s R markdown?</h3>
+
+<p>R markdown is a filetype (<code>.rmd</code>) that supports <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">markdown syntax</a> and code chunk execution within the RStudio IDE. The beauty of R markdown documents (and their counterpart - R notebooks) is that they allow the analyst to weave their narrative around the data analysis itself. In addition, by running your products in R markdown you can very quickly and easily render the file into new formats that look less codey and more pretty (this post, for instance, was written in R markdown).</p>
+
+<p><strong>How does it work?</strong>
+To set up an R markdown, simply select <code>R Markdown</code> in the dropdown selection when you start a new file.</p>
+
+<p><img src="https://ehbick01.github.io/img/rmd-new-file-select.png" alt="New rmd file" /></p>
+
+<p>After you select R markdown, a message window will pop up and ask you some info about the document you will ultimately want to create. This includes the name of the document, the author, and what the final filetype will be (HTML, PDF, or Word). In our case, we are going to choose HTML.</p>
+
+<p><img src="https://ehbick01.github.io/img/rmd-file-params.png" alt="File parameters" /></p>
+
+<p>Once you&rsquo;ve made your selection, a new R markdown file will open in your Source panel with some stuff already pre-populated throughout. This initial file is sort of a tutorial - it gives a very brief overview of how it is set up and how to use it. We&rsquo;ll talk about each section individually.</p>
+
+<p><img src="https://ehbick01.github.io/img/rmd-init.png" alt="Initial file" /></p>
+
+<p><strong>Front-matter matters</strong>
+At the top of your R markdown document will be &lsquo;YAML front-matter&rsquo; contained within two sets of <code>---</code> - this section will inform <code>knitr</code> how to create the document when we choose to knit it. Since we set up our file parameters to output as HTML, our front-matter designates the output as <code>html_document</code> - and the title and (if we put one in) the author will be displayed here as well.</p>
+
+<p><img src="https://ehbick01.github.io/img/rmd-yaml.png" alt="YAML" /></p>
+
+<p>It is also possible to include metadata in the front-matter, such as tags or any type of categorization of your post. You can also assign various themes, assign a tabloe of contents, or even reference your own CSS styling to be applied to the final product. I&rsquo;m not going to get into detail with that, but if you&rsquo;re interested checkout RStudio&rsquo;s <a href="http://rmarkdown.rstudio.com/html_document_format.html">tutorials on R markdown here</a>.</p>
+
+<p><strong>Do work(space)</strong>
+Below the YAML front-matter is where the magic <em>really</em> happens - because this is where the actual analysis takes place. When you look at an R markdown document, it is generally cut up by what are called &ldquo;code chunks.&rdquo; These are sections of the document that are surrounding by three backticks. In markdown, ````` denotes a chunk of computer code - and that&rsquo;s the same in R markdown.</p>
+
+<p>Along with these three backticks, you will notice a language specification (it&rsquo;s almost <em>always</em> just r, but now <code>knitr</code> supports <a href="http://rmarkdown.rstudio.com/authoring_knitr_engines.html">several different languages</a>) as well as a general section title and some rules about the output of the chunk. When the document is knitted, the chunks will be executed and the results of the code will be displayed in the final output (unless you specifically tell it to be hidden).</p>
+
+<p><img src="https://ehbick01.github.io/img/rmd-code-chunk.png" alt="Code chunk" /></p>
+
+<p>Areas outside of the code chunks - which is everything <em>not</em> surrounded by three backticks - are free text space. The text in this area adheres to markdown syntax, giving the analyst the ability to take full power of the ease in creating formatted text to be rendered. The combination of the free text space and the code execution is fantastic for project work, as you can inject your narrative directly into the analysis itself.</p>
+
+<p><img src="https://ehbick01.github.io/img/rmd-free-text.png" alt="Free text" /></p>
+
+<p>In addition, you can run the script within the IDE just as if it was a plain R script as well - RStudio will execute the code chunks and even display the output of those chunks interactively beneath them within your Source panel if you have the most up-to-date version of RStudio installed. Essentially, R markdown documents are a one-stop shop for running projects in RStudio!</p>
+
+<h3 id="cool-what-now">Cool - what now?</h3>
+
+<p>Now that we know how to start and use R markdown documents, let&rsquo;s talk about how to knit them. Because ultimately, all we have done up until now is replace an R script that you would never send to a non-analyst (read: normal) person with an R markdown document that you would also never send to a non-analyst person. This is where <code>knitr</code> comes into play.</p>
+
+<p>At the top of your Source panel is a button that says, appropriately, &ldquo;Knit.&rdquo; When you click that button a file window will ask you to save your file.</p>
+
+<p><img src="https://ehbick01.github.io/img/rmd-knit.png" alt="Knit" /></p>
+
+<p>Once you have named and saved your file, it will begin to be processed and a new file will be created based on the filetype specified in the YAML front-matter we talked about before. Since we have ours set to <code>html_document</code>, an HTML file is created. By default, RStudio will display the new file in a new window for you to view - or you can just open the file to view in a browser (or whatever based on your filetype).</p>
+
+<p><img src="https://ehbick01.github.io/img/rmd-render.png" alt="Render" /></p>
+
+<p>You can then either send the final output on to your final audience, or even host it as a standalone webpage or blogpost - and your analysis, visualizations, and narrative will be available for all to see! Also - this includes interactive charts as well - <code>knitr</code> will appropriately render those as well if you are using interactive plotting packages like <code>plotly</code> which rely on JavaScript libraries.</p>
+
+<p>That&rsquo;s all it takes! If you&rsquo;re interested in checking out more - dive into <a href="http://rmarkdown.rstudio.com/gallery.html">the R markdown gallery</a> - there are a ton of great examples that provide their source code as well. Have fun, and go build cool stuff!</p>
+
               
             </div>
           </div>
           <div id="post-footer" class="post-footer main-content-wrap">
             
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://ehbick01.github.io/tags/r/">r</a>
+
+  <a class="tag tag--primary tag--small" href="https://ehbick01.github.io/tags/rmarkdown/">rmarkdown</a>
+
+  <a class="tag tag--primary tag--small" href="https://ehbick01.github.io/tags/html/">html</a>
+
+  <a class="tag tag--primary tag--small" href="https://ehbick01.github.io/tags/knit/">knit</a>
+
+                  </div>
+                
               
             
             <div class="post-actions-wrap">
@@ -261,7 +355,7 @@
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ehbick01.github.io/portfolio/work5/" data-tooltip="Name of the work 5">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -269,7 +363,7 @@
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ehbick01.github.io/portfolio/work7/" data-tooltip="Name of the work 7">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ehbick01.github.io/2017/04/into-the-tidyverse/" data-tooltip="Into the Tidyverse">
           
             <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
             <i class="fa fa-angle-right"></i>
@@ -286,17 +380,17 @@
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fehbick01.github.io%2fportfolio%2fwork6%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fehbick01.github.io%2f2017%2f04%2fknitting-to-output-with-rmarkdown%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fehbick01.github.io%2fportfolio%2fwork6%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fehbick01.github.io%2f2017%2f04%2fknitting-to-output-with-rmarkdown%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fehbick01.github.io%2fportfolio%2fwork6%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fehbick01.github.io%2f2017%2f04%2fknitting-to-output-with-rmarkdown%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -335,14 +429,14 @@
 </footer>
 
       </div>
-      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
         <div class="post-actions-wrap">
   <nav>
     <ul class="post-actions post-action-nav">
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ehbick01.github.io/portfolio/work5/" data-tooltip="Name of the work 5">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -350,7 +444,7 @@
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ehbick01.github.io/portfolio/work7/" data-tooltip="Name of the work 7">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ehbick01.github.io/2017/04/into-the-tidyverse/" data-tooltip="Into the Tidyverse">
           
             <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
             <i class="fa fa-angle-right"></i>
@@ -367,17 +461,17 @@
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fehbick01.github.io%2fportfolio%2fwork6%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fehbick01.github.io%2f2017%2f04%2fknitting-to-output-with-rmarkdown%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fehbick01.github.io%2fportfolio%2fwork6%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fehbick01.github.io%2f2017%2f04%2fknitting-to-output-with-rmarkdown%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fehbick01.github.io%2fportfolio%2fwork6%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fehbick01.github.io%2f2017%2f04%2fknitting-to-output-with-rmarkdown%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -401,20 +495,20 @@
 
 
       </div>
-      <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
   <ul class="share-options">
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fehbick01.github.io%2fportfolio%2fwork6%2f">
+      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fehbick01.github.io%2f2017%2f04%2fknitting-to-output-with-rmarkdown%2f">
         <i class="fa fa-google-plus"></i><span>Share on Google Plus</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fehbick01.github.io%2fportfolio%2fwork6%2f">
+      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fehbick01.github.io%2f2017%2f04%2fknitting-to-output-with-rmarkdown%2f">
         <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fehbick01.github.io%2fportfolio%2fwork6%2f">
+      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fehbick01.github.io%2f2017%2f04%2fknitting-to-output-with-rmarkdown%2f">
         <i class="fa fa-twitter"></i><span>Share on Twitter</span>
       </a>
     </li>
@@ -595,9 +689,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/ehbick01.github.io\/portfolio\/work6\/';
+          this.page.url = 'https:\/\/ehbick01.github.io\/2017\/04\/knitting-to-output-with-rmarkdown\/';
           
-            this.page.identifier = '\/portfolio\/work6\/'
+            this.page.identifier = '\/2017\/04\/knitting-to-output-with-rmarkdown\/'
           
         };
         (function() {
