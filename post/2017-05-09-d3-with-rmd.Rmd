@@ -177,7 +177,7 @@ edges_expanded <- edges_expanded %>%
 
 ```
 
-```{r vectors-to-json, include = FALSE, echo=FALSE, results="asis"}
+```{r vectors-to-json, echo=FALSE, results="asis"}
 cat(
   paste(
   '<script>
