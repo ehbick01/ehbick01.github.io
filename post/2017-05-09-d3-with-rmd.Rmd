@@ -275,7 +275,7 @@ circle {
 
 <script>
 
-var width = 500,
+var width = 575,
     height = 500;
 
 var svg = d3.select("#plot").append("svg")
