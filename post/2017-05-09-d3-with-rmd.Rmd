@@ -248,7 +248,7 @@ From there, we can build `line` elements between the link objects, and also laye
 
 If you've made it this far, then you're pretty much done. Simply run the function `blogdown::build_site()` and Hugo handles the rest. If you are publishing your `/public` content to your host server then you should see your post update and render your d3 visualization at this point. Or, if you are using the two-repo method w/ github pages - once you push the changes in `/public` to your github.io repo you should be good to go!
 
-**Voila!**
+*Voila!*
 
 <style>
 
