@@ -192,8 +192,7 @@ If you're cool with those three things, then you should be able to follow along 
 
 <script src="https://d3js.org/d3.v3.min.js"></script>
 
-```{js, include = FALSE}
-// <script>
+<script>
 
 var width = 950,
     height = 700;
@@ -288,6 +287,5 @@ function transform(d) {
   return "translate(" + d.x + "," + d.y + ")";
 }
 
-// </script>
+</script>
 
-```
