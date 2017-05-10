@@ -61,23 +61,25 @@
 <h2>Setup</h2>
 <p>There are a couple of things that I am going to assume:</p>
 <ol style="list-style-type: decimal">
-<li>You have a <a href="">Hugo site setup</a> already</li>
-<li>You’re at least comfortable with <code>d3</code> and <a href=""><code>knitr</code> code chunks</a></li>
-<li>You know <a href="">the basics of Rmarkdown</a></li>
+<li>You have a <a href="https://tclavelle.github.io/blog/blogdown_github/">Hugo site setup</a> already</li>
+<li>You’re at least comfortable with <a href="https://d3js.org/"><code>d3</code></a> and <a href="http://rmarkdown.rstudio.com/authoring_knitr_engines.html"><code>knitr</code> code chunks</a></li>
+<li>You know <a href="http://rmarkdown.rstudio.com/">the basics of Rmarkdown</a></li>
 </ol>
 <p>If you’re cool with those three things, then you should be able to follow along and will probably already know more than I did when I first learned how to do this. If you aren’t too familiar with them, the keep reading! This is written from the context of having <em>just</em> learned how to do it myself - and hopefully it will be somewhat interesting still!</p>
 </div>
 <div id="staging-the-data" class="section level2">
 <h2>Staging the data</h2>
-<p>As is <em>always</em> the case when it comes to data analysis, the most important piece of the puzzle here is the data. In particular, how we stage the data for the d3 visualization is extremely important. Just about everything done in R is done using data in a nice and tidy rectangular format - meaning your rows are observations and your columns are variables. This makes it easy to do math-y things, but just about everything else in the world likes data to be a bit more nested. This is the case for d3 - which works based with <code>JSON</code> files when building out visualizations.</p>
+<p>As is <em>always</em> the case when it comes to data analysis, the most important piece of the puzzle here is the data. In particular, how we stage the data for the d3 visualization is <em>extremely</em> important. Just about everything done in R is done using data in a nice and tidy rectangular format - meaning your rows are observations and your columns are variables. This makes it easy to do math-y things, but just about everything else in the world likes data to be a bit more nested. This is the case for d3 - which works based with <code>JSON</code> files when building out visualizations.</p>
 <p>For instance, the data we are working with is a dataframe that is 4 columns wide by 900 rows long, and looks pretty clean:</p>
 <div class="figure">
 <img src="../../../../../img/data-rectangle.PNG" />
 
 </div>
-<p>If we were building some kind of weird statistical model off of this data, we would be set. But we’re not, so we aren’t - and instead we need to get the data setup in the preferred <code>JSON</code> format before we can build our d3 object. To take care of that, we can use <code>jsonlite::toJSON</code> to handle the conversion, and create a <code>&lt;script&gt;&lt;/script&gt;</code> element at the same time so that we can pass the data object to d3.</p>
+<p>If we were building some kind of weird statistical model off of this data, we would be set. But we’re not, so we aren’t - and instead we need to get the data setup in the preferred <code>JSON</code> format before we can build our d3 object. To take care of that, we can use <code>jsonlite::toJSON</code> to handle the conversion, and create a <code>&lt;script&gt;...&lt;/script&gt;</code> HTML element at the same time so that we can pass the data object to d3.</p>
 <p>For example, the following chunk will take our rectangular dataframe <code>edges_expanded</code> and transform it into a <code>JSON</code> file that is assigned to the variable name <code>links</code>. It is <em>crucial</em> that when doing this, you pass through <code>results=&quot;asis&quot;</code> and that you do not set <code>include = FALSE</code>. Otherwise, the data will not be passed to the d3 element, and your whole day will be ruined.</p>
-<pre class="r"><code>cat(
+<pre class="r"><code>
+# Build &lt;script&gt;...&lt;/script&gt; element to pass data to d3 as &#39;links&#39; variable
+cat(
   paste(
   &#39;&lt;script&gt;
     var links = &#39;,toJSON(edges_expanded),&#39;;
@@ -124,6 +126,24 @@ links.forEach(function(link) {
 <h2>Pushing the blog post</h2>
 <p>If you’ve made it this far, then you’re pretty much done. Simply run the function <code>blogdown::build_site()</code> and Hugo handles the rest. If you are publishing your <code>/public</code> content to your host server then you should see your post update and render your d3 visualization at this point. Or, if you are using the two-repo method w/ github pages - once you push the changes in <code>/public</code> to your github.io repo you should be good to go!</p>
 <p><strong>Voila!</strong></p>
+<style>
+
+.node {
+  stroke: #445359;
+}
+
+.circle text {
+  font: 10px sans-serif;
+  fill: #008abc;
+}
+
+circle {
+  fill: #7c888c;
+  stroke: #445359;
+  stroke-width: 1.5px;
+}
+
+</style>
 <div id="plot">
 
 </div>

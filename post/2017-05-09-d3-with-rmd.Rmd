@@ -16,9 +16,9 @@ This is a quick release, so I'm not going to go into much detail about the proce
 
 There are a couple of things that I am going to assume:
 
-1. You have a [Hugo site setup]() already
-2. You're at least comfortable with `d3` and [`knitr` code chunks]()
-3. You know [the basics of Rmarkdown]()
+1. You have a [Hugo site setup](https://tclavelle.github.io/blog/blogdown_github/) already
+2. You're at least comfortable with [`d3`](https://d3js.org/) and [`knitr` code chunks](http://rmarkdown.rstudio.com/authoring_knitr_engines.html)
+3. You know [the basics of Rmarkdown](http://rmarkdown.rstudio.com/)
 
 If you're cool with those three things, then you should be able to follow along and will probably already know more than I did when I first learned how to do this. If you aren't too familiar with them, the keep reading! This is written from the context of having _just_ learned how to do it myself - and hopefully it will be somewhat interesting still!
 
@@ -179,17 +179,19 @@ edges_expanded <- edges_expanded %>%
 
 ## Staging the data
 
-As is *always* the case when it comes to data analysis, the most important piece of the puzzle here is the data. In particular, how we stage the data for the d3 visualization is extremely important. Just about everything done in R is done using data in a nice and tidy rectangular format - meaning your rows are observations and your columns are variables. This makes it easy to do math-y things, but just about everything else in the world likes data to be a bit more nested. This is the case for d3 - which works based with `JSON` files when building out visualizations. 
+As is *always* the case when it comes to data analysis, the most important piece of the puzzle here is the data. In particular, how we stage the data for the d3 visualization is _extremely_ important. Just about everything done in R is done using data in a nice and tidy rectangular format - meaning your rows are observations and your columns are variables. This makes it easy to do math-y things, but just about everything else in the world likes data to be a bit more nested. This is the case for d3 - which works based with `JSON` files when building out visualizations. 
 
 For instance, the data we are working with is a dataframe that is 4 columns wide by 900 rows long, and looks pretty clean:
 
 ![](/img/data-rectangle.PNG)
 
-If we were building some kind of weird statistical model off of this data, we would be set. But we're not, so we aren't - and instead we need to get the data setup in the preferred `JSON` format before we can build our d3 object. To take care of that, we can use `jsonlite::toJSON` to handle the conversion, and create a `<script></script>` element at the same time so that we can pass the data object to d3.
+If we were building some kind of weird statistical model off of this data, we would be set. But we're not, so we aren't - and instead we need to get the data setup in the preferred `JSON` format before we can build our d3 object. To take care of that, we can use `jsonlite::toJSON` to handle the conversion, and create a `<script>...</script>` HTML element at the same time so that we can pass the data object to d3.
 
 For example, the following chunk will take our rectangular dataframe `edges_expanded` and transform it into a `JSON` file that is assigned to the variable name `links`. It is *crucial* that when doing this, you pass through `results="asis"` and that you do not set `include = FALSE`. Otherwise, the data will not be passed to the d3 element, and your whole day will be ruined.
 
 ```{r vectors-to-json, results="asis"}
+
+# Build <script>...</script> element to pass data to d3 as 'links' variable
 cat(
   paste(
   '<script>
@@ -197,12 +199,12 @@ cat(
   </script>'
   , sep="")
 )
+
 ```
 
 The result of this is not quite as pretty, but you can see that the `paste` function is essentially building out a `<script>` HTML element that creates the `links` variable for us. Nifty trick! At this point, our data is setup and ready to go for a d3 visualization. 
 
 ![](/img/data-json.PNG)
-
 
 ## Building the visual
 
@@ -247,6 +249,25 @@ From there, we can build `line` elements between the link objects, and also laye
 If you've made it this far, then you're pretty much done. Simply run the function `blogdown::build_site()` and Hugo handles the rest. If you are publishing your `/public` content to your host server then you should see your post update and render your d3 visualization at this point. Or, if you are using the two-repo method w/ github pages - once you push the changes in `/public` to your github.io repo you should be good to go!
 
 **Voila!**
+
+<style>
+
+.node {
+  stroke: #445359;
+}
+
+.circle text {
+  font: 10px sans-serif;
+  fill: #008abc;
+}
+
+circle {
+  fill: #7c888c;
+  stroke: #445359;
+  stroke-width: 1.5px;
+}
+
+</style>
 
 <div id="plot"></div>
 
