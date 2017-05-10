@@ -183,15 +183,25 @@ As is *always* the case when it comes to data analysis, the most important piece
 
 For instance, the data we are working with is a dataframe that is 4 columns wide by 900 rows long, and looks pretty clean:
 
-![Rectangular data](/img/data-rectangle.PNG)
+![](/img/data-rectangle.PNG)
 
 If we were building some kind of weird statistical model off of this data, we would be set. But we're not, so we aren't - and instead we need to get the data setup in the preferred `JSON` format before we can build our d3 object. To take care of that, we can use `jsonlite::toJSON` to handle the conversion, and create a `<script></script>` element at the same time so that we can pass the data object to d3.
 
 For example, the following chunk will take our rectangular dataframe `edges_expanded` and transform it into a `JSON` file that is assigned to the variable name `links`. It is *crucial* that when doing this, you pass through `results="asis"` and that you do not set `include = FALSE`. Otherwise, the data will not be passed to the d3 element, and your whole day will be ruined.
 
+```
+cat(
+  paste(
+  '<script>
+    var links = ',toJSON(edges_expanded),';
+  </script>'
+  , sep="")
+)
+```
+
 The result of this is not quite as pretty, but you can see that the `paste` function is essentially building out a `<script>` HTML element that creates the `links` variable for us. Nifty trick! At this point, our data is setup and ready to go for a d3 visualization. 
 
-![JSON data](/img/data-json.PNG)
+![](/img/data-json.PNG)
 
 ```{r vectors-to-json, echo=FALSE, results="asis"}
 cat(
@@ -203,7 +213,7 @@ cat(
 )
 ```
 
-## Building the Visual
+## Building the visual
 
 
 
