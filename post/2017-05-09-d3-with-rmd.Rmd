@@ -162,7 +162,7 @@ edges_expanded <- edges_expanded %>%
 
 ```
 
-```{r vectors-to-json, echo=FALSE, results="asis"}
+```{r vectors-to-json, include = FALSE, echo=FALSE, results="asis"}
 cat(
   paste(
   '<script>
@@ -176,7 +176,8 @@ cat(
 
 <script src="https://d3js.org/d3.v3.min.js"></script>
 
-<script>
+```{js, include = FALSE}
+// <script>
 
 var width = 950,
     height = 700;
@@ -271,4 +272,6 @@ function transform(d) {
   return "translate(" + d.x + "," + d.y + ")";
 }
 
-</script>
+// </script>
+
+```
