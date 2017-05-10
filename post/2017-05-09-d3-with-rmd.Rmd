@@ -189,7 +189,7 @@ If we were building some kind of weird statistical model off of this data, we wo
 
 For example, the following chunk will take our rectangular dataframe `edges_expanded` and transform it into a `JSON` file that is assigned to the variable name `links`. It is *crucial* that when doing this, you pass through `results="asis"` and that you do not set `include = FALSE`. Otherwise, the data will not be passed to the d3 element, and your whole day will be ruined.
 
-```
+```{r vectors-to-json, results="asis"}
 cat(
   paste(
   '<script>
@@ -203,15 +203,6 @@ The result of this is not quite as pretty, but you can see that the `paste` func
 
 ![](/img/data-json.PNG)
 
-```{r vectors-to-json, echo=FALSE, results="asis"}
-cat(
-  paste(
-  '<script>
-    var links = ',toJSON(edges_expanded),';
-  </script>'
-  , sep="")
-)
-```
 
 ## Building the visual
 
