@@ -6,10 +6,19 @@
     <description>Recent content in Tags on Analytics Sandbox</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Apr 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 09 May 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ehbick01.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>D3.Js</title>
+      <link>https://ehbick01.github.io/tags/d3.js/</link>
+      <pubDate>Tue, 09 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ehbick01.github.io/tags/d3.js/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Data Collection</title>
@@ -68,7 +77,7 @@
     <item>
       <title>Rmarkdown</title>
       <link>https://ehbick01.github.io/tags/rmarkdown/</link>
-      <pubDate>Thu, 13 Apr 2017 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 09 May 2017 00:00:00 +0000</pubDate>
       
       <guid>https://ehbick01.github.io/tags/rmarkdown/</guid>
       <description></description>
@@ -86,7 +95,7 @@
     <item>
       <title>Visualization</title>
       <link>https://ehbick01.github.io/tags/visualization/</link>
-      <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 09 May 2017 00:00:00 +0000</pubDate>
       
       <guid>https://ehbick01.github.io/tags/visualization/</guid>
       <description></description>
