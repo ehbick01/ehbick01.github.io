@@ -206,7 +206,45 @@ The result of this is not quite as pretty, but you can see that the `paste` func
 
 ## Building the visual
 
+At this point, we have our data staged in the right format and we've built our `<script>` element to pass the `links` variable through. All that is left now is to build out our d3 element within our `Rmarkdown` document, and then we can let `Hugo` do the rest for us!
 
+Building the d3 element is deceptively easy - especially if you already have the pieces put together separately. In fact, by keeping the data and visualization all in one place (in this case, building everything within RStudio), embedding a d3 element into an `Rmarkdown` file is (in my opinion, at least) way easier than trying to develop it into a raw HTML object.
+
+To do so, you simply set a new `div` element - in this case, we are giving it the ID "plot" - and then append your SVG element to that `div`. 
+
+```
+
+<script src="https://d3js.org/d3.v3.min.js"></script>
+
+<script>
+
+var width = 950,
+    height = 700;
+
+var svg = d3.select("#plot").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+```
+
+That will give us the basic structure of our SVG element that we will then layer our data onto. I'm not going to get into how to set the force layout we are using here, but to build out our nodes (the user-defined circles) we can use the following:
+
+```
+// Create nodes for each unique source and target.
+links.forEach(function(link) {
+  link.source = nodeByName(link.source);
+  link.target = nodeByName(link.target);
+});
+
+```
+
+The chunk takes our pre-defined variable `links` and assigns two new objects: `link.source` and `link.target`. These are used throughout the d3 layout to build the source and target nodes - essentially telling the object how to (uh, literally) connect the dots.
+
+From there, we can build `line` elements between the link objects, and also layer over some of the fancy mouseover functionality to show username or connected nodes. As mentioned, I'm not going to get into those details - but the passing of data from a code chunk to a d3 element in Rmarkdown is extremely useful.
+
+## Pushing the blog post
+
+If you've made it this far, then you're pretty much done. Simply run the function `blogdown::build_site()` and Hugo handles the rest. If you are publishing your `/public` content to your host server then you should see your post update and render your d3 visualization at this point. Or, if you are using the two-repo method w/ github pages - once you push the changes in `/public` to your github.io repo you should be good to go!
 
 **Voila!**
 
