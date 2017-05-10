@@ -6,10 +6,20 @@
     <description>Recent content in Tutorials on Analytics Sandbox</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 Apr 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 09 May 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ehbick01.github.io/categories/tutorials/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Using D3 w/ R Markdown</title>
+      <link>https://ehbick01.github.io/2017/05/using-d3-w/-r-markdown/</link>
+      <pubDate>Tue, 09 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ehbick01.github.io/2017/05/using-d3-w/-r-markdown/</guid>
+      <description>BackgroundThe purpose of this tutorial is to walk through using d3.js within an Rmd document that is then rendered as an HTML page with a Hugo static site generator. That was probably the most technical sentence of this entire write-up, so let’s all breath a sigh of relief now that we’re through with it.
+This is a quick release, so I’m not going to go into much detail about the process to get the data and what it fully represents just yet - I’m saving that for a deeper post with a “tbd” release date at this point.</description>
+    </item>
     
     <item>
       <title>Knitting to Output with Rmarkdown</title>

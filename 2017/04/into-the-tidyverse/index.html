@@ -214,7 +214,7 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://ehbick01.github.iotags/r">R</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://ehbick01.github.iotags/r">r</a>&nbsp;&#47;
     
       <a class="post-taxonomy-tag" href="https://ehbick01.github.iotags/tidyverse">tidyverse</a>&nbsp;&#47;
     
@@ -300,39 +300,39 @@ library(ggthemes)
 
 # Set plot theme
 theme_set(
-  theme_bw(base_family = 'Segoe UI', base_size = 12) + 
-                                      # Set initial theme ('theme_bw') and set base text family 
+  theme_bw(base_family = 'Segoe UI', base_size = 12) +
+                                      # Set initial theme ('theme_bw') and set base text family
                                       # and base text size
     theme(
-      plot.title = element_text(face = 'bold', hjust = 0), 
+      plot.title = element_text(face = 'bold', hjust = 0),
                                       # Set the font-face and horizontal adjustment of the plot title  
 
-      text = element_text(colour = '#4e5c65'), 
+      text = element_text(colour = '#4e5c65'),
                                       # Set the font text color for the whole plot
 
-      panel.background = element_rect('white'), 
+      panel.background = element_rect('white'),
                                       # Set the background of the plotting panel to white
 
-      plot.background = element_rect('white'), 
+      plot.background = element_rect('white'),
                                       # Set the background of the plot to white
 
-      panel.border = element_rect(colour = 'white'), 
+      panel.border = element_rect(colour = 'white'),
                                       # Sets the panel border (border around the actual plotting area)
                                       # to white
 
-      panel.grid.major.x = element_blank(), 
+      panel.grid.major.x = element_blank(),
                                       # Removes major X-axis grid lines
 
-      panel.grid.major.y = element_blank(), 
+      panel.grid.major.y = element_blank(),
                                       # Remote major Y-axis grid lines
 
-      panel.grid.minor.y = element_blank(), 
+      panel.grid.minor.y = element_blank(),
                                       # Removes minor Y-axis grid lines
 
-      legend.background = element_rect('white'), 
+      legend.background = element_rect('white'),
                                       # Sets the background of the legend to white
 
-      legend.title = element_blank(), 
+      legend.title = element_blank(),
                                       # Removes legend title
 
       legend.position = 'right',      # Aligns the legend to the right of the plot
@@ -341,21 +341,21 @@ theme_set(
 
       legend.key = element_blank(),   # Removes background of legend keys
 
-      strip.background = element_rect('#f0f2f3', colour = 'white'), 
-                                      # Only relevant for facet plots - this sets the background 
+      strip.background = element_rect('#f0f2f3', colour = 'white'),
+                                      # Only relevant for facet plots - this sets the background
                                       # of the title of faceted plots
 
-      strip.text = element_text(face = 'bold', size = 10), 
+      strip.text = element_text(face = 'bold', size = 10),
                                       # Only relevant for facet plots - this sets the font-face
                                       # and size of the title of faceted plots
 
-      axis.text = element_text(face = 'bold', size = 9), 
+      axis.text = element_text(face = 'bold', size = 9),
                                       # Set font-face and size of axis text
 
-      axis.title = element_blank(),   # Remove axis titles (be careful with removing titles 
-                                      # - YOU NEED TO BE CLEAR WHAT THE PLOT IS SHOWING 
+      axis.title = element_blank(),   # Remove axis titles (be careful with removing titles
+                                      # - YOU NEED TO BE CLEAR WHAT THE PLOT IS SHOWING
                                       # IN THE SUBTITLE IF YOU DO THIS!!!!!)
-                                      
+
       axis.ticks = element_blank()    # Remove axis tick marks
     )
 )
@@ -384,39 +384,39 @@ With this data, we can calculate a weighted average age for each sex for each ye
 
 <pre><code class="language-r, manipulate-and-visualize-data">
 # Manipulate our data
-life_tables %&gt;%                       # The pipe operator will 'pipe' our `life_tables` dataframe 
+life_tables %&gt;%                       # The pipe operator will 'pipe' our `life_tables` dataframe
                                       # as the first argument to the following function
-                
-  dplyr::select(x, lx, sex, year) %&gt;% # dplyr::select will select the relevant variables (columns) 
+
+  dplyr::select(x, lx, sex, year) %&gt;% # dplyr::select will select the relevant variables (columns)
                                       # that we need and create a new dataframe
-                                      
-  dplyr::group_by(year, sex) %&gt;%      # dplyr::group_by will group our observations (rows) into the 
+
+  dplyr::group_by(year, sex) %&gt;%      # dplyr::group_by will group our observations (rows) into the
                                       # relevant categories (year and sex) to run calculations on
-                                      
-  dplyr::summarise_each(funs(weighted.mean(., lx)), -lx) %&gt;% 
-                                      # dplyr::summarise_each summarises each of the 
-                                      # ungrouped columns (in this case, age and number of people) 
-                                      # based on the function defined in the funs() argument 
+
+  dplyr::summarise_each(funs(weighted.mean(., lx)), -lx) %&gt;%
+                                      # dplyr::summarise_each summarises each of the
+                                      # ungrouped columns (in this case, age and number of people)
+                                      # based on the function defined in the funs() argument
                                       # - in this case, it's a weighted mean
-  
+
   # Visualize the results
-  ggplot(aes(year, x, group = sex)) + # You can then use the piping operator to feed the final product 
-                                      # (a dataframe of weighted average ages by year and gender) directly 
+  ggplot(aes(year, x, group = sex)) + # You can then use the piping operator to feed the final product
+                                      # (a dataframe of weighted average ages by year and gender) directly
                                       # into the data argument of your ggplot function
-                                      
-    geom_linerange(aes(ymin = 0, ymax = x, colour = sex), position = position_dodge(5)) + 
-                                      # This builds a line plot from 0 to the age of each gender by year 
+
+    geom_linerange(aes(ymin = 0, ymax = x, colour = sex), position = position_dodge(5)) +
+                                      # This builds a line plot from 0 to the age of each gender by year
                                       # and colors them based on their classification (M or F)
-                                      
-    geom_point(aes(colour = sex), position = position_dodge(5)) + 
-                                      # This builds a dot plot for the age of each gender by year 
+
+    geom_point(aes(colour = sex), position = position_dodge(5)) +
+                                      # This builds a dot plot for the age of each gender by year
                                       # also colored by gender
-                                      
-    scale_colour_manual(values = c('blue', 'pink')) + 
-                                      # This manual defines the coloration of our classifiers 
+
+    scale_colour_manual(values = c('blue', 'pink')) +
+                                      # This manual defines the coloration of our classifiers
                                       # - (M == 'blue, F == 'pink')
-                                      
-    labs(title = 'Average Age by Cohort', 
+
+    labs(title = 'Average Age by Cohort',
          subtitle = 'Ages based on the weighted average number of individuals for each age among each cohort.',
          caption = 'Data provided by the Social Security Administration')
 
@@ -440,9 +440,9 @@ by.name &lt;- babynames %&gt;%              # Feed the babynames data into the n
 glimpse(by.name$data[[1]])
 
 # Now that the data is in this format, we can fit a linear model to each name
-by.name.model &lt;- by.name %&gt;%          # Feed the by.name data into the next function 
+by.name.model &lt;- by.name %&gt;%          # Feed the by.name data into the next function
 
-  mutate(model = purrr::map(data, ~ lm(n ~ year, data = .)) 
+  mutate(model = purrr::map(data, ~ lm(n ~ year, data = .))
                                       # Mutate the by.name dataframe to build a new column titled &quot;model&quot;
 
 )
@@ -453,8 +453,8 @@ glimpse(by.name.model)
 # We can also now extract model coefficients using `broom::tidy`
 by.name.model %&gt;%                     # Feed by.name.model dataframe into the next function
 
-  unnest(model %&gt;% purrr::map(broom::tidy)) 
-                                      # Unnest the contents of the &quot;model&quot; column and 
+  unnest(model %&gt;% purrr::map(broom::tidy))
+                                      # Unnest the contents of the &quot;model&quot; column and
                                       # output the rownames (coefficients in this case)
 
 </code></pre>
