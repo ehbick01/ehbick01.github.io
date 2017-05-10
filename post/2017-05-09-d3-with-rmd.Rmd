@@ -172,6 +172,22 @@ cat(
 )
 ```
 
+## Background
+
+The purpose of this tutorial is to walk through using `d3.js` within an `Rmd` document that is then rendered as an `HTML` page with a `Hugo` static site generator. That was probably the most technical sentence of this entire write-up, so let's all breath a sigh of relief now that we're through with it.
+
+This is a quick release, so I'm not going to go into much detail about the process to get the data and what it fully represents just yet - I'm saving that for a deeper post with a "tbd" release date at this point. Just trust that the data is legit for now, and reach out if you want a pre-release introduction to it all.
+
+## Setup
+
+There are a couple of things that I am going to assume:
+
+1. You have a [Hugo site setup]() already
+2. You're at least comfortable with `d3` and [`knitr` code chunks]()
+3. You know [the basics of Rmarkdown]()
+
+If you're cool with those three things, then you should be able to follow along and will probably already know more than I did when I first learned how to do this. If you aren't too familiar with them, the keep reading! This is written from the context of having _just_ learned how to do it myself - and hopefully it will be somewhat interesting still!
+
 <div id="plot"></div>
 
 <script src="https://d3js.org/d3.v3.min.js"></script>
