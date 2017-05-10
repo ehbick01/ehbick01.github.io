@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scraping Whiskey Reviews Using Scrapy</title>
+<meta name="description" content="A website built through Hugo and blogdown.">
+<meta name="generator" content="Hugo 0.20" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700" type="text/css" media="all" />
+<link rel="stylesheet" href="../../../../css/style.css" type="text/css" media="all" />
+<script type="text/javascript" src="../../../../js/scripts.js"></script>
+<link rel="shortcut icon" href="../../../../favicon.ico">
+</head>
+<body class="body body-right-sidebar mobile" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+	<div class="container container-outer">
+		<header class="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+			<div class="container container-inner clearfix">
+				<div class="logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
+					<a class="logo__link" href="../../../../" title="A Hugo website" rel="home">
+						<h1 class="logo__title">A Hugo website</h1>
+						
+					</a>
+				</div>
+			</div>
+			<nav class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	<ul class="menu__list">
+		<li class="menu__item "><a class="menu__link" href="../../../../about/">ABOUT</a></li>
+		<li class="menu__item "><a class="menu__link" href="https://github.com/rstudio/blogdown">GITHUB</a></li>
+		<li class="menu__item "><a class="menu__link" href="https://twitter.com/rstudio">TWITTER</a></li>
+	</ul>
+</nav>
+		</header>
+		<div class="wrapper clearfix">
+
+<div class="main-content content" role="main" itemprop="mainContentOfPage">
+	<article class="post">
+		<header class="post__header clearfix">
+			<h1 class="post__title">Scraping Whiskey Reviews Using Scrapy</h1>
+			<p class="post__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="post__meta-date" datetime="2017-04-04 00:00:00 &#43;0000 UTC">April 04, 2017</time>
+				<span class="post__meta-categories meta-categories">
+					<svg class="icon icon-category" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+					<a class="meta-categories__link" href="../../../../categories/tutorials" rel="category">Tutorials</a></span>
+			</p>
+		</header>
+		<div class="post__content clearfix">
+			
+
+<h2 id="background">Background</h2>
+
+<p>This is a working document to help understand the first stage of this project - the data grab. It is also a helpful learning tool for myself, as this is the first <strong>real</strong> spider that I&rsquo;ve created to pull data from a website.</p>
+
+<h2 id="setup">Setup</h2>
+
+<p>The initial setup is quick, simply <code>cd</code> into the directory that you want to work in and run -</p>
+
+<pre><code>scrapy startproject whiskey_reviews
+</code></pre>
+
+<p>Easy enough.</p>
+
+<h2 id="initial-file-structure">Initial file structure</h2>
+
+<p>The above command builds out the following file structure (which has been pushed <a href="https://github.com/ehbick01/whiskey-review">here</a>):</p>
+
+<pre><code>whiskey_reviews
+|-- whiskey_reviews
+    |-- spiders
+        |--__init__.py
+    |-- __init__.py
+    |-- items.py
+    |-- middlewares.py
+    |-- pipelines.py
+    |-- settings.py
+|-- scrapy.cfg
+</code></pre>
+
+<p><strong>File descriptors</strong>
+To understand the infrascture that&rsquo;s been built, let&rsquo;s break down the files and filepaths and what they are doing</p>
+
+<p><em>/whiskey_reviews</em></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">File</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><em>/whiskey_reviews</em></td>
+<td align="left">Project&rsquo;s Python module where code will be imported from</td>
+</tr>
+
+<tr>
+<td align="left"><code>scrapy.cfg</code></td>
+<td align="left">Deployment configuration file</td>
+</tr>
+</tbody>
+</table>
+
+<p><em>/whiskey_reviews/whiskey_reviews</em></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">File</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><em>/spiders</em></td>
+<td align="left">Directory for spiders to be placed</td>
+</tr>
+
+<tr>
+<td align="left"><code>__init__.py</code></td>
+<td align="left">Marks package directory for project</td>
+</tr>
+
+<tr>
+<td align="left"><code>items.py</code></td>
+<td align="left">Project items definition file</td>
+</tr>
+
+<tr>
+<td align="left"><code>middlewares.py</code></td>
+<td align="left">Project middlewares to alter request/responses</td>
+</tr>
+
+<tr>
+<td align="left"><code>pipelines.py</code></td>
+<td align="left">Project pipelines file</td>
+</tr>
+
+<tr>
+<td align="left"><code>settings.py</code></td>
+<td align="left">Project settings file</td>
+</tr>
+</tbody>
+</table>
+
+<p><em>/whiskey_reviews/spiders</em></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">File</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>__init__.py</code></td>
+<td align="left">Marks package directory for spiders</td>
+</tr>
+</tbody>
+</table>
+
+<p>At the very start of this, we will not be messing with the <code>pipelines.py</code> file - but once we have a dedicated db set up we will likely tweak those settings as well. Until then, all results will be stored as JSON files.</p>
+
+<h2 id="what-s-the-data-i-m-grabbing">What&rsquo;s the data I&rsquo;m grabbing?</h2>
+
+<p>For this project, I am scraping whiskey product reviews from <a href="http://www.connosr.com/">this site</a>. In particular, for each review I am grabbing the following:</p>
+
+<ul>
+<li>Author</li>
+<li>Product</li>
+<li>Review</li>
+<li>Rating</li>
+<li>Likes given for the review</li>
+</ul>
+
+<h2 id="what-am-i-doing-with-it">What am I doing with it?</h2>
+
+<p>Aside from just learning how to do this whole thing, I am going to use the data to tune a learner against, and feed the results of that work into a recommender that is hosted on an app. This will not only give me insights on how to build these spiders, but also how to store their results and use the data for modeling - and then to develop the infrastructure to deliver the output in a meaningful way.</p>
+
+<h2 id="workflow">Workflow</h2>
+
+<p><strong>Step 1 - Create spider</strong></p>
+
+<p><a href="whiskey_reviews/whiskey_reviews/spiders/reviews_spider.py">My spider</a> is structurally similar to the tutorial version hosted on the <code>scrapy</code> doc site.</p>
+
+<pre><code>import scrapy
+
+
+class ReviewsSpider(scrapy.Spider):
+    name = &quot;reviews&quot;
+    start_urls = [
+        'https://www.connosr.com/whisky-reviews:1',
+    ]
+
+    def parse(self, response):
+        for review in response.css('div.details'):
+            yield {
+                'author': review.css('span.username::text').extract_first(),
+                'product': review.css('span.product::text').extract_first(),
+                'review': review.css('div.snippet p::text').extract_first(),
+                'rating': review.css('span.score-circle::text').extract_first(),
+                'likes': review.css('p.meta span.actions span.action.do-like i.value::text').extract_first(),
+            }
+
+        next_page = response.css('a.pagination-next::attr(href)').extract_first()
+        if next_page is not None:
+            next_page = response.urljoin(next_page)
+            yield scrapy.Request(next_page, callback=self.parse)
+</code></pre>
+
+<p>There are three main components of this script. The first -</p>
+
+<pre><code>class ReviewsSpider(scrapy.Spider):
+    name = &quot;reviews&quot;
+    start_urls = [
+        'https://www.connosr.com/whisky-reviews:1',
+    ]
+</code></pre>
+
+<p>Defines the spider&rsquo;s name that we will build and the URL starting point - <code>https://www.connosr.com/whiskey-reviews:1</code> that the spider will begin at.</p>
+
+<p>The second component -</p>
+
+<pre><code>def parse(self, response):
+    for review in response.css('div.details'):
+        yield {
+            'author': review.css('span.username::text').extract_first(),
+            'product': review.css('span.product::text').extract_first(),
+            'review': review.css('div.snippet p::text').extract_first(),
+            'rating': review.css('span.score-circle::text').extract_first(),
+            'likes': review.css('p.meta span.actions span.action.do-like i.value::text').extract_first(),
+        }
+</code></pre>
+
+<p>Creates the <code>parse()</code> function that will be applied to each request. In this case, our scraper will find the <code>details</code> class of the <code>&lt;div&gt;</code> element - and from within that block, pulls our relevant information based on the their HTML paths.</p>
+
+<p>For instance, the author&rsquo;s name is stored in the <code>username</code> class of the <code>&lt;span&gt;</code> element beneath <code>div.details</code> - which is reflected in the selector path for the author variable that we are collecting.</p>
+
+<p>The final component -</p>
+
+<pre><code>next_page = response.css('a.pagination-next::attr(href)').extract_first()
+if next_page is not None:
+    next_page = response.urljoin(next_page)
+    yield scrapy.Request(next_page, callback=self.parse)
+</code></pre>
+
+<p>Defines the recursive parsing of pages. This allows us to run our spider across all pages of the site, and automatically ends on the final page.</p>
+
+<p><strong>Step 2 - Running Spider</strong></p>
+
+<p><code>cd</code> into the main directory for the project - which is wherever the <code>scrapy.cfg</code> file exists. Once there, run -</p>
+
+<pre><code>scrapy crawl reviews -o reviews.json
+</code></pre>
+
+<p><strong>Step 3 - Storing Results</strong></p>
+
+<p>The simplest way to store results from a spider is to either write them to JSON or JSON Lines format. The benefit of using JSON Lines is that you can run the scraper more than once without it crashing - and each record is a separate line so not everything is stored to memory.</p>
+
+<p>For the sake of industry standardization, I am sticking with JSON format for crawling. Using JSON Lines may work for standalone side projects, but for anything open source JSON will likely be used.</p>
+
+<p><strong>Step 4 - Productionalizing</strong></p>
+
+<p>Eventually, these will be fed into either a <code>postgresql</code> or <code>dynamoDB</code> space. I haven&rsquo;t set those up, but once I do I will link to the overview for that section of the stack here.</p>
+
+		</div>
+		
+<div class="post__tags tags clearfix">
+	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item"><a class="tags__link" href="../../../../tags/python/" rel="tag">python</a></li>
+		<li class="tags__item"><a class="tags__link" href="../../../../tags/web-scraping/" rel="tag">web scraping</a></li>
+		<li class="tags__item"><a class="tags__link" href="../../../../tags/data-collection/" rel="tag">data collection</a></li>
+	</ul>
+</div>
+
+	</article>
+	
+	
+
+	
+</div>
+
+<aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+	
+	
+
+	
+	
+</aside>
+	</div>
+		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+			<div class="container container-inner">
+				<p class="footer__copyright">&copy; 2017 A Hugo website. Based on <a href="//wordpress.org/themes/mh-magazine-lite/" target="_blank" rel="nofollow noopener noreferrer">MH Magazine lite</a>.</p>
+			</div>
+		</footer>
+	</div>
+
+<script>
+	var navigation = responsiveNav(".menu", {
+		navClass: "menu--collapse",
+	});
+</script>
+
+</body>
+</html>

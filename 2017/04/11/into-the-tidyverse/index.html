@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Into the Tidyverse</title>
+<meta name="description" content="A website built through Hugo and blogdown.">
+<meta name="generator" content="Hugo 0.20" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700" type="text/css" media="all" />
+<link rel="stylesheet" href="../../../../css/style.css" type="text/css" media="all" />
+<script type="text/javascript" src="../../../../js/scripts.js"></script>
+<link rel="shortcut icon" href="../../../../favicon.ico">
+</head>
+<body class="body body-right-sidebar mobile" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+	<div class="container container-outer">
+		<header class="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+			<div class="container container-inner clearfix">
+				<div class="logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
+					<a class="logo__link" href="../../../../" title="A Hugo website" rel="home">
+						<h1 class="logo__title">A Hugo website</h1>
+						
+					</a>
+				</div>
+			</div>
+			<nav class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	<ul class="menu__list">
+		<li class="menu__item "><a class="menu__link" href="../../../../about/">ABOUT</a></li>
+		<li class="menu__item "><a class="menu__link" href="https://github.com/rstudio/blogdown">GITHUB</a></li>
+		<li class="menu__item "><a class="menu__link" href="https://twitter.com/rstudio">TWITTER</a></li>
+	</ul>
+</nav>
+		</header>
+		<div class="wrapper clearfix">
+
+<div class="main-content content" role="main" itemprop="mainContentOfPage">
+	<article class="post">
+		<header class="post__header clearfix">
+			<h1 class="post__title">Into the Tidyverse</h1>
+			<p class="post__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="post__meta-date" datetime="2017-04-11 00:00:00 &#43;0000 UTC">April 11, 2017</time>
+				<span class="post__meta-categories meta-categories">
+					<svg class="icon icon-category" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+					<a class="meta-categories__link" href="../../../../categories/tutorials" rel="category">Tutorials</a></span>
+			</p>
+		</header>
+		<div class="post__content clearfix">
+			
+
+<h3 id="today-s-purpose">Today&rsquo;s purpose</h3>
+
+<p>To walk through the <code>tidyverse</code> and become familiar with the functions that it provides the user and how it can make your life <em>so much better</em> to use.</p>
+
+<h3 id="what-the-heck-even-is-a-tidyverse">What the heck even is a <code>tidyverse</code>?</h3>
+
+<p><a href="http://tidyverse.org/">tidyverse</a> is a collection of R packages providing an all-inclusive resource for data science (well, <em>almost</em>). When you <code>library(tidyverse)</code> the following packages are loaded up as dependencies:</p>
+
+<table>
+<thead>
+<tr>
+<th><strong>Package</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>ggplot2</code></td>
+<td>Graphics-building package based on The Grammar of Graphics mapping aesthetics to data visually</td>
+</tr>
+
+<tr>
+<td><code>tibble</code></td>
+<td>Wrapper on traditional dataframes allowing for better printing and viewing data</td>
+</tr>
+
+<tr>
+<td><code>tidyr</code></td>
+<td>Package to easily and quickly get your data into a rectangular format (if not already in one)</td>
+</tr>
+
+<tr>
+<td><code>readr</code></td>
+<td>Super fast package for reading in rectangular data (like csv, tsv, and fwf)</td>
+</tr>
+
+<tr>
+<td><code>purrr</code></td>
+<td>A set of tools for working with functions and vectors for functional programming techniques</td>
+</tr>
+
+<tr>
+<td><code>dplyr</code></td>
+<td>Quickly and efficiently manipulate data with a Grammar of Manipulation (just made that up)</td>
+</tr>
+</tbody>
+</table>
+
+<p>Within each of these there are a handful of other dependencies - not all of which I am going to talk through. However, one package that <strong>is</strong> important to know about is <code>magrittr</code>. It is a dependency loaded with <code>dplyr</code> and allows for the use of pipes (the <code>%&gt;%</code> character) - which is an extremely strong character and provides the user the ability to &ldquo;pipe through&rdquo; elements into functions for manipulation/modeling/visualizing. That probably makes no sense right now, but I promise it will when we walk through an example or two.</p>
+
+<h3 id="let-s-jump-into-some-examples">Let&rsquo;s jump into some examples</h3>
+
+<p>Probably the best way to learn a thing in R is to do a thing in R - so let&rsquo;s do that. I made a promise years ago not to ever use <code>iris</code> or <code>mtcars</code> in my examples, so instead we are going to mess around with the <code>babynames</code> dataset (another gem from Hadley Wickham) for this first example.</p>
+
+<p><strong>Let&rsquo;s load in our packages and set a theme for plotting</strong></p>
+
+<p>Aside from our <code>tidyverse</code> package, we are also going to load in the <code>babynames</code> package that houses baby names for the US from 1880 to 2014 for all names used by at least five children of either sex for every year. It also has cohort life tables, which is pretty interesting to mess around with as well. The data is provided by the Social Security Administration - so you <em>know</em> it&rsquo;s legit.</p>
+
+<p>We&rsquo;re also loading in <code>extrafont</code> to access fonts that exist on my local machine and <code>ggthemes</code> to church up plots in ggplot a bit. I&rsquo;ve added descriptors next to each line of <code>ggthemes::theme_set</code> to help understand what each does.</p>
+
+<pre><code class="language-r, load packages and set themes, message = FALSE, warning = FALSE">
+# Load packages
+library(tidyverse)
+library(babynames)
+library(extrafont)
+library(ggthemes)
+
+# Set plot theme
+theme_set(
+  theme_bw(base_family = 'Segoe UI', base_size = 12) +
+                                      # Set initial theme ('theme_bw') and set base text family
+                                      # and base text size
+    theme(
+      plot.title = element_text(face = 'bold', hjust = 0),
+                                      # Set the font-face and horizontal adjustment of the plot title  
+
+      text = element_text(colour = '#4e5c65'),
+                                      # Set the font text color for the whole plot
+
+      panel.background = element_rect('white'),
+                                      # Set the background of the plotting panel to white
+
+      plot.background = element_rect('white'),
+                                      # Set the background of the plot to white
+
+      panel.border = element_rect(colour = 'white'),
+                                      # Sets the panel border (border around the actual plotting area)
+                                      # to white
+
+      panel.grid.major.x = element_blank(),
+                                      # Removes major X-axis grid lines
+
+      panel.grid.major.y = element_blank(),
+                                      # Remote major Y-axis grid lines
+
+      panel.grid.minor.y = element_blank(),
+                                      # Removes minor Y-axis grid lines
+
+      legend.background = element_rect('white'),
+                                      # Sets the background of the legend to white
+
+      legend.title = element_blank(),
+                                      # Removes legend title
+
+      legend.position = 'right',      # Aligns the legend to the right of the plot
+
+      legend.direction = 'vertical',  # Aligns the legend vertically
+
+      legend.key = element_blank(),   # Removes background of legend keys
+
+      strip.background = element_rect('#f0f2f3', colour = 'white'),
+                                      # Only relevant for facet plots - this sets the background
+                                      # of the title of faceted plots
+
+      strip.text = element_text(face = 'bold', size = 10),
+                                      # Only relevant for facet plots - this sets the font-face
+                                      # and size of the title of faceted plots
+
+      axis.text = element_text(face = 'bold', size = 9),
+                                      # Set font-face and size of axis text
+
+      axis.title = element_blank(),   # Remove axis titles (be careful with removing titles
+                                      # - YOU NEED TO BE CLEAR WHAT THE PLOT IS SHOWING
+                                      # IN THE SUBTITLE IF YOU DO THIS!!!!!)
+
+      axis.ticks = element_blank()    # Remove axis tick marks
+    )
+)
+
+</code></pre>
+
+<p><strong>Peek into some of the data</strong></p>
+
+<p>Honing in first on the lifetales, we have a number of options in R to get a feel for what the data looks like. In base R, we can use <code>str</code> to identify the class of each variable (assuming your data is rectangular) as well as the first few rows of each.</p>
+
+<p>However, in <code>tidyverse</code> we have <code>tibble::glimpse</code> - which provides a cleaner view of the underlying data, and will always render the data even if it is stored remotely in a database.</p>
+
+<pre><code class="language-r, load data">
+# Load in the life tables from SSA (`babynames` package) and glimpse
+life_tables &lt;- babynames::lifetables
+tibble::glimpse(life_tables)
+
+str(life_tables)
+
+</code></pre>
+
+<p><strong>Do some quick visual exploration</strong></p>
+
+<p>This is where it starts to get fun (assuming you aren&rsquo;t already having fun) - exploring the data visually. We know from our source what the definition of each variable is. For instance, we know that variable <code>x</code> is age in years; we know that <code>lx</code> is the number of individuals alive at year <code>x</code>; we know the number of survivors by <code>sex</code>; and we know the number of survivors across each <code>year</code>.
+With this data, we can calculate a weighted average age for each sex for each year using a handful of <code>dplyr</code> functions. We can then pass this data through to be visualized using <code>ggplot</code> - quickly visualizing some trends!</p>
+
+<pre><code class="language-r, manipulate-and-visualize-data">
+# Manipulate our data
+life_tables %&gt;%                       # The pipe operator will 'pipe' our `life_tables` dataframe
+                                      # as the first argument to the following function
+
+  dplyr::select(x, lx, sex, year) %&gt;% # dplyr::select will select the relevant variables (columns)
+                                      # that we need and create a new dataframe
+
+  dplyr::group_by(year, sex) %&gt;%      # dplyr::group_by will group our observations (rows) into the
+                                      # relevant categories (year and sex) to run calculations on
+
+  dplyr::summarise_each(funs(weighted.mean(., lx)), -lx) %&gt;%
+                                      # dplyr::summarise_each summarises each of the
+                                      # ungrouped columns (in this case, age and number of people)
+                                      # based on the function defined in the funs() argument
+                                      # - in this case, it's a weighted mean
+
+  # Visualize the results
+  ggplot(aes(year, x, group = sex)) + # You can then use the piping operator to feed the final product
+                                      # (a dataframe of weighted average ages by year and gender) directly
+                                      # into the data argument of your ggplot function
+
+    geom_linerange(aes(ymin = 0, ymax = x, colour = sex), position = position_dodge(5)) +
+                                      # This builds a line plot from 0 to the age of each gender by year
+                                      # and colors them based on their classification (M or F)
+
+    geom_point(aes(colour = sex), position = position_dodge(5)) +
+                                      # This builds a dot plot for the age of each gender by year
+                                      # also colored by gender
+
+    scale_colour_manual(values = c('blue', 'pink')) +
+                                      # This manual defines the coloration of our classifiers
+                                      # - (M == 'blue, F == 'pink')
+
+    labs(title = 'Average Age by Cohort',
+         subtitle = 'Ages based on the weighted average number of individuals for each age among each cohort.',
+         caption = 'Data provided by the Social Security Administration')
+
+</code></pre>
+
+<p><strong>Build some models</strong></p>
+
+<p>Another use-case for the <code>tidyverse</code> family would be applying a function across a dataframe. In the old days, this would be done either through the <code>apply</code> family or via a good ol&rsquo; <code>for</code> loop. However, with <code>purrr</code> comes the handy <code>map</code> function - which will allow you to <em>map</em> a function across your data.</p>
+
+<p>For example, let&rsquo;s say we want to be crazy and model the propensity of a given name over time. In other words, we are going to model the change in the number of individual names as a function of time. To set this up, we are going to dive back into the <code>babynames</code> package, and export out the dataframe of names.</p>
+
+<pre><code class="language-r, manipulate-and-model-data">
+# First, let's nest all of the data for each name into their own column
+by.name &lt;- babynames %&gt;%              # Feed the babynames data into the next function
+
+  group_by(name) %&gt;%                  # Group the dataframe by name
+
+  nest()                              # Nest the grouped data into a list
+
+# We can see that each element within `data` represents the entire data for each group (or in this case, each name)
+glimpse(by.name$data[[1]])
+
+# Now that the data is in this format, we can fit a linear model to each name
+by.name.model &lt;- by.name %&gt;%          # Feed the by.name data into the next function
+
+  mutate(model = purrr::map(data, ~ lm(n ~ year, data = .))
+                                      # Mutate the by.name dataframe to build a new column titled &quot;model&quot;
+
+)
+
+# Take a glimpse - we now see a new column 'model' housing all of the modeling results
+glimpse(by.name.model)
+
+# We can also now extract model coefficients using `broom::tidy`
+by.name.model %&gt;%                     # Feed by.name.model dataframe into the next function
+
+  unnest(model %&gt;% purrr::map(broom::tidy))
+                                      # Unnest the contents of the &quot;model&quot; column and
+                                      # output the rownames (coefficients in this case)
+
+</code></pre>
+
+<h3 id="what-else-can-tidyverse-do">What else can <code>tidyverse</code> do?</h3>
+
+<p>There are an insane number of functions embedded into <code>tidyverse</code> - far more than a single tutorial can cover. We hit on some of the main packages today with <code>dplyr</code> for quick data manipulation and <code>ggplot</code> for good-looking visualization, but packages like <code>purrr</code> and <code>tidyr</code> can help to take manipulation even further prior to visualization.</p>
+
+<p>To learn more about how you can use <code>tidyverse</code> and its dependencies, check out <a href="http://tidyverse.org/">the official page</a> or read Hadley Wickham&rsquo;s <a href="http://r4ds.had.co.nz/">R for Data Science</a>. Go make cool stuff!</p>
+
+		</div>
+		
+<div class="post__tags tags clearfix">
+	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item"><a class="tags__link" href="../../../../tags/r/" rel="tag">r</a></li>
+		<li class="tags__item"><a class="tags__link" href="../../../../tags/tidyverse/" rel="tag">tidyverse</a></li>
+		<li class="tags__item"><a class="tags__link" href="../../../../tags/manipulation/" rel="tag">manipulation</a></li>
+		<li class="tags__item"><a class="tags__link" href="../../../../tags/visualization/" rel="tag">visualization</a></li>
+	</ul>
+</div>
+
+	</article>
+	
+	
+
+	
+</div>
+
+<aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+	
+	
+
+	
+	
+</aside>
+	</div>
+		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+			<div class="container container-inner">
+				<p class="footer__copyright">&copy; 2017 A Hugo website. Based on <a href="//wordpress.org/themes/mh-magazine-lite/" target="_blank" rel="nofollow noopener noreferrer">MH Magazine lite</a>.</p>
+			</div>
+		</footer>
+	</div>
+
+<script>
+	var navigation = responsiveNav(".menu", {
+		navClass: "menu--collapse",
+	});
+</script>
+
+</body>
+</html>

@@ -1,142 +1,142 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Analytics Sandbox</title>
-    <link>https://ehbick01.github.io/</link>
-    <description>Recent content on Analytics Sandbox</description>
+    <title>A Hugo website</title>
+    <link>/</link>
+    <description>Recent content on A Hugo website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 05 Nov 2016 19:41:01 +0530</lastBuildDate>
     
-	<atom:link href="https://ehbick01.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Name of the work 2</title>
-      <link>https://ehbick01.github.io/portfolio/work2/</link>
+      <link>/portfolio/work2/</link>
       <pubDate>Sat, 05 Nov 2016 19:41:01 +0530</pubDate>
       
-      <guid>https://ehbick01.github.io/portfolio/work2/</guid>
+      <guid>/portfolio/work2/</guid>
       <description>&lt;p&gt;When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Name of the work 3</title>
-      <link>https://ehbick01.github.io/portfolio/work3/</link>
+      <link>/portfolio/work3/</link>
       <pubDate>Sat, 05 Nov 2016 19:44:32 +0530</pubDate>
       
-      <guid>https://ehbick01.github.io/portfolio/work3/</guid>
+      <guid>/portfolio/work3/</guid>
       <description>&lt;p&gt;Fifth abundantly made Give sixth hath. Cattle creature i be don&amp;rsquo;t them.
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Item without image</title>
-      <link>https://ehbick01.github.io/portfolio/work4/</link>
+      <link>/portfolio/work4/</link>
       <pubDate>Sat, 05 Nov 2016 19:50:47 +0530</pubDate>
       
-      <guid>https://ehbick01.github.io/portfolio/work4/</guid>
+      <guid>/portfolio/work4/</guid>
       <description>&lt;p&gt;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Name of the work 5</title>
-      <link>https://ehbick01.github.io/portfolio/work5/</link>
+      <link>/portfolio/work5/</link>
       <pubDate>Sat, 05 Nov 2016 19:53:42 +0530</pubDate>
       
-      <guid>https://ehbick01.github.io/portfolio/work5/</guid>
+      <guid>/portfolio/work5/</guid>
       <description>&lt;p&gt;Fifth abundantly made Give sixth hath. Cattle creature i be don&amp;rsquo;t them.
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Name of the work 6</title>
-      <link>https://ehbick01.github.io/portfolio/work6/</link>
+      <link>/portfolio/work6/</link>
       <pubDate>Sat, 05 Nov 2016 19:56:17 +0530</pubDate>
       
-      <guid>https://ehbick01.github.io/portfolio/work6/</guid>
+      <guid>/portfolio/work6/</guid>
       <description>&lt;p&gt;Fifth abundantly made Give sixth hath. Cattle creature i be don&amp;rsquo;t them.
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Name of the work 7</title>
-      <link>https://ehbick01.github.io/portfolio/work7/</link>
+      <link>/portfolio/work7/</link>
       <pubDate>Sat, 05 Nov 2016 19:57:40 +0530</pubDate>
       
-      <guid>https://ehbick01.github.io/portfolio/work7/</guid>
+      <guid>/portfolio/work7/</guid>
       <description>&lt;p&gt;Fifth abundantly made Give sixth hath. Cattle creature i be don&amp;rsquo;t them.
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Name of the work 8</title>
-      <link>https://ehbick01.github.io/portfolio/work8/</link>
+      <link>/portfolio/work8/</link>
       <pubDate>Sat, 05 Nov 2016 19:59:22 +0530</pubDate>
       
-      <guid>https://ehbick01.github.io/portfolio/work8/</guid>
+      <guid>/portfolio/work8/</guid>
       <description>&lt;p&gt;Fifth abundantly made Give sixth hath. Cattle creature i be don&amp;rsquo;t them.
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Item with image</title>
-      <link>https://ehbick01.github.io/portfolio/work9/</link>
+      <link>/portfolio/work9/</link>
       <pubDate>Sat, 05 Nov 2016 20:02:19 +0530</pubDate>
       
-      <guid>https://ehbick01.github.io/portfolio/work9/</guid>
+      <guid>/portfolio/work9/</guid>
       <description>&lt;p&gt;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Item with image</title>
-      <link>https://ehbick01.github.io/portfolio/work10/</link>
+      <link>/portfolio/work10/</link>
       <pubDate>Sat, 05 Nov 2016 20:22:08 +0530</pubDate>
       
-      <guid>https://ehbick01.github.io/portfolio/work10/</guid>
+      <guid>/portfolio/work10/</guid>
       <description>&lt;p&gt;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Item with image</title>
-      <link>https://ehbick01.github.io/portfolio/work11/</link>
+      <link>/portfolio/work11/</link>
       <pubDate>Sat, 05 Nov 2016 20:23:59 +0530</pubDate>
       
-      <guid>https://ehbick01.github.io/portfolio/work11/</guid>
+      <guid>/portfolio/work11/</guid>
       <description>&lt;p&gt;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Using D3 w/ R Markdown</title>
-      <link>https://ehbick01.github.io/2017/05/using-d3-w/-r-markdown/</link>
+      <link>/2017/05/09/using-d3-w/-r-markdown/</link>
       <pubDate>Tue, 09 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://ehbick01.github.io/2017/05/using-d3-w/-r-markdown/</guid>
+      <guid>/2017/05/09/using-d3-w/-r-markdown/</guid>
       <description>BackgroundThe purpose of this tutorial is to walk through using d3.js within an Rmd document that is then rendered as an HTML page with a Hugo static site generator. That was probably the most technical sentence of this entire write-up, so let’s all breath a sigh of relief now that we’re through with it.
 This is a quick release, so I’m not going to go into much detail about the process to get the data and what it fully represents just yet - I’m saving that for a deeper post with a “tbd” release date at this point.</description>
     </item>
     
     <item>
       <title>Knitting to Output with Rmarkdown</title>
-      <link>https://ehbick01.github.io/2017/04/knitting-to-output-with-rmarkdown/</link>
+      <link>/2017/04/13/knitting-to-output-with-rmarkdown/</link>
       <pubDate>Thu, 13 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://ehbick01.github.io/2017/04/knitting-to-output-with-rmarkdown/</guid>
+      <guid>/2017/04/13/knitting-to-output-with-rmarkdown/</guid>
       <description>Tutorial&amp;rsquo;s purpose Manipulating data and building visuals is the bread and butter of the R language - but what can get lost in the fold is the ability to easily and quickly push analysis out for folks to see. Using knitr and rmarkdown makes that significantly easier, and exists at the press of a button. In this tutorial, we&amp;rsquo;re going to press those buttons.
 What are the packages? There are a ton of ways to get information from R out into the world - ranging from static Word or PDF documents all the way to interactive web applications.</description>
     </item>
     
     <item>
       <title>Into the Tidyverse</title>
-      <link>https://ehbick01.github.io/2017/04/into-the-tidyverse/</link>
+      <link>/2017/04/11/into-the-tidyverse/</link>
       <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://ehbick01.github.io/2017/04/into-the-tidyverse/</guid>
+      <guid>/2017/04/11/into-the-tidyverse/</guid>
       <description>Today&amp;rsquo;s purpose To walk through the tidyverse and become familiar with the functions that it provides the user and how it can make your life so much better to use.
 What the heck even is a tidyverse? tidyverse is a collection of R packages providing an all-inclusive resource for data science (well, almost). When you library(tidyverse) the following packages are loaded up as dependencies:
    Package Description     ggplot2 Graphics-building package based on The Grammar of Graphics mapping aesthetics to data visually   tibble Wrapper on traditional dataframes allowing for better printing and viewing data   tidyr Package to easily and quickly get your data into a rectangular format (if not already in one)   readr Super fast package for reading in rectangular data (like csv, tsv, and fwf)   purrr A set of tools for working with functions and vectors for functional programming techniques   dplyr Quickly and efficiently manipulate data with a Grammar of Manipulation (just made that up)    Within each of these there are a handful of other dependencies - not all of which I am going to talk through.</description>
@@ -144,10 +144,10 @@ What the heck even is a tidyverse? tidyverse is a collection of R packages provi
     
     <item>
       <title>Scraping Whiskey Reviews Using Scrapy</title>
-      <link>https://ehbick01.github.io/2017/04/scraping-whiskey-reviews-using-scrapy/</link>
+      <link>/2017/04/04/scraping-whiskey-reviews-using-scrapy/</link>
       <pubDate>Tue, 04 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://ehbick01.github.io/2017/04/scraping-whiskey-reviews-using-scrapy/</guid>
+      <guid>/2017/04/04/scraping-whiskey-reviews-using-scrapy/</guid>
       <description>Background This is a working document to help understand the first stage of this project - the data grab. It is also a helpful learning tool for myself, as this is the first real spider that I&amp;rsquo;ve created to pull data from a website.
 Setup The initial setup is quick, simply cd into the directory that you want to work in and run -
 scrapy startproject whiskey_reviews  Easy enough.</description>
@@ -155,30 +155,30 @@ scrapy startproject whiskey_reviews  Easy enough.</description>
     
     <item>
       <title>Get in touch</title>
-      <link>https://ehbick01.github.io/contact/index/</link>
+      <link>/contact/index/</link>
       <pubDate>Sun, 06 Nov 2016 13:00:25 +0530</pubDate>
       
-      <guid>https://ehbick01.github.io/contact/index/</guid>
+      <guid>/contact/index/</guid>
       <description>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then
 Effects present letters inquiry no an removed or friends. Desire behind latter me though in. Supposing shameless am he engrossed up additions. My possible peculiar together to.</description>
     </item>
     
     <item>
       <title>About me</title>
-      <link>https://ehbick01.github.io/about/index/</link>
+      <link>/about/index/</link>
       <pubDate>Sat, 05 Nov 2016 21:05:33 +0530</pubDate>
       
-      <guid>https://ehbick01.github.io/about/index/</guid>
+      <guid>/about/index/</guid>
       <description>An sincerity so extremity he additions. Her yet there truth merit. Mrs all projecting favourable now unpleasing. Son law garden chatty temper. Oh children provided to mr elegance marriage strongly. Off can admiration prosperous now devonshire diminution law.
 Received overcame oh sensible so at an. Formed do change merely to county it. Am separate contempt domestic to to oh. On relation my so addition branched. Put hearing cottage she norland letters equally prepare too.</description>
     </item>
     
     <item>
       <title>Name of the work 1</title>
-      <link>https://ehbick01.github.io/portfolio/work1/</link>
+      <link>/portfolio/work1/</link>
       <pubDate>Sat, 05 Nov 2016 18:25:22 +0530</pubDate>
       
-      <guid>https://ehbick01.github.io/portfolio/work1/</guid>
+      <guid>/portfolio/work1/</guid>
       <description>&lt;p&gt;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life. One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.
 &lt;/p&gt;</description>
     </item>

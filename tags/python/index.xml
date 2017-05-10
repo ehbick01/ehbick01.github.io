@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Python on Analytics Sandbox</title>
-    <link>https://ehbick01.github.io/tags/python/</link>
-    <description>Recent content in Python on Analytics Sandbox</description>
+    <title>Python on A Hugo website</title>
+    <link>/tags/python/</link>
+    <description>Recent content in Python on A Hugo website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 04 Apr 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://ehbick01.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Scraping Whiskey Reviews Using Scrapy</title>
-      <link>https://ehbick01.github.io/2017/04/scraping-whiskey-reviews-using-scrapy/</link>
+      <link>/2017/04/04/scraping-whiskey-reviews-using-scrapy/</link>
       <pubDate>Tue, 04 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://ehbick01.github.io/2017/04/scraping-whiskey-reviews-using-scrapy/</guid>
+      <guid>/2017/04/04/scraping-whiskey-reviews-using-scrapy/</guid>
       <description>Background This is a working document to help understand the first stage of this project - the data grab. It is also a helpful learning tool for myself, as this is the first real spider that I&amp;rsquo;ve created to pull data from a website.
 Setup The initial setup is quick, simply cd into the directory that you want to work in and run -
 scrapy startproject whiskey_reviews  Easy enough.</description>

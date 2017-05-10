@@ -1,112 +1,112 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Analytics Sandbox</title>
-    <link>https://ehbick01.github.io/tags/</link>
-    <description>Recent content in Tags on Analytics Sandbox</description>
+    <title>Tags on A Hugo website</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on A Hugo website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 09 May 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://ehbick01.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>D3.Js</title>
-      <link>https://ehbick01.github.io/tags/d3.js/</link>
+      <link>/tags/d3.js/</link>
       <pubDate>Tue, 09 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://ehbick01.github.io/tags/d3.js/</guid>
+      <guid>/tags/d3.js/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Data Collection</title>
-      <link>https://ehbick01.github.io/tags/data-collection/</link>
+      <link>/tags/data-collection/</link>
       <pubDate>Tue, 04 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://ehbick01.github.io/tags/data-collection/</guid>
+      <guid>/tags/data-collection/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Html</title>
-      <link>https://ehbick01.github.io/tags/html/</link>
+      <link>/tags/html/</link>
       <pubDate>Thu, 13 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://ehbick01.github.io/tags/html/</guid>
+      <guid>/tags/html/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Knit</title>
-      <link>https://ehbick01.github.io/tags/knit/</link>
+      <link>/tags/knit/</link>
       <pubDate>Thu, 13 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://ehbick01.github.io/tags/knit/</guid>
+      <guid>/tags/knit/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Manipulation</title>
-      <link>https://ehbick01.github.io/tags/manipulation/</link>
+      <link>/tags/manipulation/</link>
       <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://ehbick01.github.io/tags/manipulation/</guid>
+      <guid>/tags/manipulation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>https://ehbick01.github.io/tags/python/</link>
+      <link>/tags/python/</link>
       <pubDate>Tue, 04 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://ehbick01.github.io/tags/python/</guid>
+      <guid>/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R</title>
-      <link>https://ehbick01.github.io/tags/r/</link>
+      <link>/tags/r/</link>
       <pubDate>Thu, 13 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://ehbick01.github.io/tags/r/</guid>
+      <guid>/tags/r/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rmarkdown</title>
-      <link>https://ehbick01.github.io/tags/rmarkdown/</link>
+      <link>/tags/rmarkdown/</link>
       <pubDate>Tue, 09 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://ehbick01.github.io/tags/rmarkdown/</guid>
+      <guid>/tags/rmarkdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tidyverse</title>
-      <link>https://ehbick01.github.io/tags/tidyverse/</link>
+      <link>/tags/tidyverse/</link>
       <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://ehbick01.github.io/tags/tidyverse/</guid>
+      <guid>/tags/tidyverse/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Visualization</title>
-      <link>https://ehbick01.github.io/tags/visualization/</link>
+      <link>/tags/visualization/</link>
       <pubDate>Tue, 09 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://ehbick01.github.io/tags/visualization/</guid>
+      <guid>/tags/visualization/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Web Scraping</title>
-      <link>https://ehbick01.github.io/tags/web-scraping/</link>
+      <link>/tags/web-scraping/</link>
       <pubDate>Tue, 04 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://ehbick01.github.io/tags/web-scraping/</guid>
+      <guid>/tags/web-scraping/</guid>
       <description></description>
     </item>
     

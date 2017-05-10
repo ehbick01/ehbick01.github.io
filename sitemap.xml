@@ -2,204 +2,199 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://ehbick01.github.io/portfolio/work2/</loc>
+    <loc>/portfolio/work2/</loc>
     <lastmod>2016-11-05T19:41:01+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/portfolio/work3/</loc>
+    <loc>/portfolio/work3/</loc>
     <lastmod>2016-11-05T19:44:32+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/portfolio/work4/</loc>
+    <loc>/portfolio/work4/</loc>
     <lastmod>2016-11-05T19:50:47+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/portfolio/work5/</loc>
+    <loc>/portfolio/work5/</loc>
     <lastmod>2016-11-05T19:53:42+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/portfolio/work6/</loc>
+    <loc>/portfolio/work6/</loc>
     <lastmod>2016-11-05T19:56:17+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/portfolio/work7/</loc>
+    <loc>/portfolio/work7/</loc>
     <lastmod>2016-11-05T19:57:40+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/portfolio/work8/</loc>
+    <loc>/portfolio/work8/</loc>
     <lastmod>2016-11-05T19:59:22+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/portfolio/work9/</loc>
+    <loc>/portfolio/work9/</loc>
     <lastmod>2016-11-05T20:02:19+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/portfolio/work10/</loc>
+    <loc>/portfolio/work10/</loc>
     <lastmod>2016-11-05T20:22:08+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/portfolio/work11/</loc>
+    <loc>/portfolio/work11/</loc>
     <lastmod>2016-11-05T20:23:59+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/2017/05/using-d3-w/-r-markdown/</loc>
+    <loc>/2017/05/09/using-d3-w/-r-markdown/</loc>
     <lastmod>2017-05-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/2017/04/knitting-to-output-with-rmarkdown/</loc>
+    <loc>/2017/04/13/knitting-to-output-with-rmarkdown/</loc>
     <lastmod>2017-04-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/2017/04/into-the-tidyverse/</loc>
+    <loc>/2017/04/11/into-the-tidyverse/</loc>
     <lastmod>2017-04-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/2017/04/scraping-whiskey-reviews-using-scrapy/</loc>
+    <loc>/2017/04/04/scraping-whiskey-reviews-using-scrapy/</loc>
     <lastmod>2017-04-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/contact/index/</loc>
+    <loc>/contact/index/</loc>
     <lastmod>2016-11-06T13:00:25+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/about/index/</loc>
+    <loc>/about/index/</loc>
     <lastmod>2016-11-05T21:05:33+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/portfolio/work1/</loc>
+    <loc>/portfolio/work1/</loc>
     <lastmod>2016-11-05T18:25:22+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/about/</loc>
-    <lastmod>2016-11-05T21:05:33+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ehbick01.github.io/</loc>
+    <loc>/</loc>
     <lastmod>2016-11-05T19:41:01+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/archives/</loc>
+    <loc>/about/</loc>
+    <lastmod>2016-11-05T21:05:33+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/categories/</loc>
+    <loc>/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/contact/</loc>
+    <loc>/contact/</loc>
     <lastmod>2016-11-06T13:00:25+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/tags/d3.js/</loc>
+    <loc>/tags/d3.js/</loc>
     <lastmod>2017-05-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/tags/data-collection/</loc>
+    <loc>/tags/data-collection/</loc>
     <lastmod>2017-04-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/tags/html/</loc>
+    <loc>/tags/html/</loc>
     <lastmod>2017-04-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/tags/knit/</loc>
+    <loc>/tags/knit/</loc>
     <lastmod>2017-04-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/tags/manipulation/</loc>
+    <loc>/tags/manipulation/</loc>
     <lastmod>2017-04-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/portfolio/</loc>
+    <loc>/portfolio/</loc>
     <lastmod>2016-11-05T18:25:22+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/post/</loc>
+    <loc>/post/</loc>
     <lastmod>2017-05-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/tags/python/</loc>
+    <loc>/tags/python/</loc>
     <lastmod>2017-04-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/tags/r/</loc>
+    <loc>/tags/r/</loc>
     <lastmod>2017-04-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/tags/rmarkdown/</loc>
+    <loc>/tags/rmarkdown/</loc>
     <lastmod>2017-05-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2017-05-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/tags/tidyverse/</loc>
+    <loc>/tags/tidyverse/</loc>
     <lastmod>2017-04-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/categories/tutorials/</loc>
+    <loc>/categories/tutorials/</loc>
     <lastmod>2017-05-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/tags/visualization/</loc>
+    <loc>/tags/visualization/</loc>
     <lastmod>2017-05-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ehbick01.github.io/tags/web-scraping/</loc>
+    <loc>/tags/web-scraping/</loc>
     <lastmod>2017-04-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
