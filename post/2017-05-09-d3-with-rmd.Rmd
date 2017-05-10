@@ -206,6 +206,7 @@ The result of this is not quite as pretty, but you can see that the `paste` func
 
 ![](/img/data-json.PNG)
 
+
 ## Building the visual
 
 At this point, we have our data staged in the right format and we've built our `<script>` element to pass the `links` variable through. All that is left now is to build out our d3 element within our `Rmarkdown` document, and then we can let `Hugo` do the rest for us!
