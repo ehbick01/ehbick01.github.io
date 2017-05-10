@@ -76,6 +76,6 @@ i {
   color: #265778;
 }
 
-.pre code {
-  color: #FDF6E3;
+.pre {
+  fill: #FDF6E3;
 }
