@@ -112,6 +112,15 @@
     </item>
     
     <item>
+      <title>Using ANN To Predict Euthanasia in LMAS Intake</title>
+      <link>/2017/12/03/using-ann-to-predict-euthanasia-in-lmas-intake/</link>
+      <pubDate>Sun, 03 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/12/03/using-ann-to-predict-euthanasia-in-lmas-intake/</guid>
+      <description>Overview and IntroductionDriven by the desire to do something as fun and interesting as this post by the folks at Decision Science, I decided to dust off some previous work done on Louisville Metro Animal Services Animal [“LMAS”] Intake and Outcome data (you can get it here). The problems are sort of the same at the core - while the linked work focuses on customer churn, this analysis will focus on what information tends to predict a given animal will be euthanized at LMAS using Artificial Neural Networks (“ANN”).</description>
+    </item>
+    
+    <item>
       <title>Embedding d3 Visuals in Rmarkdown</title>
       <link>/2017/05/09/embedding-d3-visuals-in-rmarkdown/</link>
       <pubDate>Tue, 09 May 2017 00:00:00 +0000</pubDate>
@@ -155,20 +164,20 @@ scrapy startproject whiskey_reviews  Easy enough.</description>
     
     <item>
       <title>Get in touch</title>
-      <link>/contact/index/</link>
+      <link>/contact/</link>
       <pubDate>Sun, 06 Nov 2016 13:00:25 +0530</pubDate>
       
-      <guid>/contact/index/</guid>
+      <guid>/contact/</guid>
       <description>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then
 Effects present letters inquiry no an removed or friends. Desire behind latter me though in. Supposing shameless am he engrossed up additions. My possible peculiar together to.</description>
     </item>
     
     <item>
       <title>About me</title>
-      <link>/about/index/</link>
+      <link>/about/</link>
       <pubDate>Sat, 05 Nov 2016 21:05:33 +0530</pubDate>
       
-      <guid>/about/index/</guid>
+      <guid>/about/</guid>
       <description>An sincerity so extremity he additions. Her yet there truth merit. Mrs all projecting favourable now unpleasing. Son law garden chatty temper. Oh children provided to mr elegance marriage strongly. Off can admiration prosperous now devonshire diminution law.
 Received overcame oh sensible so at an. Formed do change merely to county it. Am separate contempt domestic to to oh. On relation my so addition branched. Put hearing cottage she norland letters equally prepare too.</description>
     </item>

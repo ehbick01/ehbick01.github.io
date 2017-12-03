@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
     <loc>/portfolio/work2/</loc>
@@ -52,6 +53,11 @@
   </url>
   
   <url>
+    <loc>/2017/12/03/using-ann-to-predict-euthanasia-in-lmas-intake/</loc>
+    <lastmod>2017-12-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2017/05/09/embedding-d3-visuals-in-rmarkdown/</loc>
     <lastmod>2017-05-09T00:00:00+00:00</lastmod>
   </url>
@@ -72,12 +78,12 @@
   </url>
   
   <url>
-    <loc>/contact/index/</loc>
+    <loc>/contact/</loc>
     <lastmod>2016-11-06T13:00:25+05:30</lastmod>
   </url>
   
   <url>
-    <loc>/about/index/</loc>
+    <loc>/about/</loc>
     <lastmod>2016-11-05T21:05:33+05:30</lastmod>
   </url>
   
@@ -122,6 +128,12 @@
   </url>
   
   <url>
+    <loc>/tags/deepl-learning/</loc>
+    <lastmod>2017-12-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/html/</loc>
     <lastmod>2017-04-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -134,20 +146,38 @@
   </url>
   
   <url>
+    <loc>/tags/lmas/</loc>
+    <lastmod>2017-12-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/manipulation/</loc>
     <lastmod>2017-04-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>/tags/neural-networks/</loc>
+    <lastmod>2017-12-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/open-data/</loc>
+    <lastmod>2017-12-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/portfolio/</loc>
-    <lastmod>2016-11-05T18:25:22+05:30</lastmod>
+    <lastmod>2016-11-05T19:41:01+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2017-05-09T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -166,6 +196,12 @@
   <url>
     <loc>/tags/rmarkdown/</loc>
     <lastmod>2017-05-09T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/statistical-learning/</loc>
+    <lastmod>2017-12-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

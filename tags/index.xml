@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>D3.Js</title>
+      <title>D3.js</title>
       <link>/tags/d3.js/</link>
       <pubDate>Tue, 09 May 2017 00:00:00 +0000</pubDate>
       
@@ -26,6 +26,15 @@
       <pubDate>Tue, 04 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/data-collection/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Deepl Learning</title>
+      <link>/tags/deepl-learning/</link>
+      <pubDate>Sun, 03 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/deepl-learning/</guid>
       <description></description>
     </item>
     
@@ -48,11 +57,38 @@
     </item>
     
     <item>
+      <title>Lmas</title>
+      <link>/tags/lmas/</link>
+      <pubDate>Sun, 03 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/lmas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Manipulation</title>
       <link>/tags/manipulation/</link>
       <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/manipulation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Neural Networks</title>
+      <link>/tags/neural-networks/</link>
+      <pubDate>Sun, 03 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/neural-networks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Open Data</title>
+      <link>/tags/open-data/</link>
+      <pubDate>Sun, 03 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/open-data/</guid>
       <description></description>
     </item>
     

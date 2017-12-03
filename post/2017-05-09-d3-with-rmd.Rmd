@@ -29,7 +29,6 @@ knitr::opts_chunk$set(collapse = TRUE)
 
 # Data loading
 library(jsonlite)
-library(tidyjson)
 
 # Data manipulation
 library(tidyverse)
