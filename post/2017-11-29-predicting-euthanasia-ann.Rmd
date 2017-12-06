@@ -22,18 +22,24 @@ knitr::opts_chunk$set(echo = FALSE,
 ```{r load-up, echo = TRUE}
 
 ## Load Packages
+
+# Data manipulation and pre-processing
 library(tidyverse)
 library(magrittr)
-library(ggiraph)
-library(keras)
-library(lime)
 library(tidyquant)
 library(recipes)
 library(rsample)
+
+# Data modeling
+library(keras)
+library(lime)
 library(yardstick)
 library(corrr)
-library(formattable)
 library(forcats)
+
+# Data visualization
+library(ggiraph)
+library(formattable)
 library(DT)
 
 # Set plot theme
@@ -114,9 +120,12 @@ However, 1,000 a year is still quite a bit. In order to push that number even lo
 
 ## Feature Engineering and Data Pruning
 
-There are a few fields that by themselves are not extremely interesting, but with a bit of feature design could be pretty informative: 
+There are a few fields that by themselves are not extremely interesting, but with a bit of feature design could be pretty informative:
+
 + `DOB`
+
 + `Intake Date`
+
 + `Outcome Date`
 
 By themselves, these don't tell us a whole lot. But using them, we can calculate an age (where DOB is provided) and length_of_stay (where known). This gives us the chance to use these as features in our final model. Once we have those ran, we can get rid of these as they are likely less informative than their derived features.
@@ -380,8 +389,11 @@ For some background, an ANN model is a multi-layered modeling approach designed 
 ### Initialize the model
 
 Our first step is to initialize a sequential Keras model, and then add input/hidden/output layers to the sequential model. 
+
 + The `input layer` is the data itself
-+ THe `hidden layers` define the interactions between variables based on neural network nodes and the weights between them - there are also `dropout layers` which are used to control for overfitting
+
++ The `hidden layers` define the interactions between variables based on neural network nodes and the weights between them - there are also `dropout layers` which are used to control for overfitting
+
 + The `output layer` defines the method of bringing all of the information together
 
 ```{r build-keras, echo = TRUE, include = TRUE}
@@ -492,9 +504,13 @@ estimates_euth_tbl %>% conf_mat(truth, estimate)
 ```
 
 The way to read the confusion matrix is:
+
 + For every animal predicted to be euthanized in our test set, 13,879 animals were in fact euthanized (these are **true positives**)
+
 + For every animal predicted to be euthanized, 42 actually were not (these are **false positives**)
+
 + For every animal not predicted to be euthanized, 15,127 animals were in fact not euthanized (these are **true negatives**)
+
 + For every animal not predicted ot be euthanized, 4 actually were euthanized (these are **false negatives**)
 
 Walking through the numbers, the model seems to have performed pretty well. We can verify that further by calculating the area under the ROC curve - which is a barometer of how well calibrated the model is to the true positive rate and true negative rates (alluded to above). Essentially, the AUC tells us how balanced the model is at identifing animals as being euthanized at the expense of incorrectly identifying those that will **not** be euthanized. 
@@ -504,73 +520,6 @@ In our case, the AUC for this model is `r estimates_euth_tbl %>% roc_auc(truth, 
 ## Lifting the Black Box
 
 Now, this is all well and good and in theory we can apply this model on new data to predict the risk of any given animal at LMAS to be euthanized - but it doesn't help **identify** the risk factors to shed light on. To do that, we can use a couple of tools - most accessible being a correlation plot from the `corrr` package.
-
-<!-- ### LIME -->
-
-<!-- LIME stands for *Local Interpretable Model-agnostic Explanations* - and through feature importance is a valuable tool for understanding which features tend to lend the most influence on a given machine learning model (such as our own ANN). The process performed to do this varies by model type, but in general feature importance looks for variables that tend to influence some loss or accuracy function most significantly.  -->
-
-<!-- To perform this process on our own model, we need to identify the model type for our model and run predictions on new data to return feature importance. -->
-
-<!-- ```{r lime-setup, echo = TRUE, include = TRUE} -->
-
-<!-- # Identify class -->
-<!-- class(keras_init) -->
-
-<!-- # Setup lime::model_type() function for our ANN classification model -->
-<!-- model_type.keras.models.Sequential <- function(x, ...) { -->
-
-<!--     return("classification") -->
-<!-- } -->
-
-<!-- # Setup lime::predict_model() function for our ANN model -->
-<!-- predict_model.keras.models.Sequential <- function(x, newdata, type, ...) { -->
-
-<!--     pred <- predict_proba(object = x, x = as.matrix(newdata)) -->
-
-<!--     return(data.frame(Yes = pred, No = 1 - pred)) -->
-<!-- } -->
-
-<!-- # Test the predict_model() function -->
-<!-- predict_model(x = keras_init,  -->
-<!--               newdata = x_euth_test_tbl,  -->
-<!--               type = 'raw') %>% -->
-<!--     tibble::as_tibble() -->
-
-<!-- ``` -->
-
-<!-- Once the helper functions are in place for us to apply to our ANN model, we can then build out the variable explaination using the `lime()` function and then using the `explain()` function we can return the top features for every observation (if we wanted - I'm going to run for just the first 10). -->
-
-<!-- ```{r run-lime, echo = TRUE, include = TRUE} -->
-
-<!-- # Run lime() on training set -->
-<!-- explainer <- lime( -->
-<!--   x = x_euth_train_tbl,  -->
-<!--   model = keras_init,  -->
-<!--   bin_continuous = TRUE -->
-<!-- ) -->
-
-<!-- # Run explain() on explainer -->
-<!-- explanation <- explain( -->
-<!--   x_euth_test_tbl[1:10,],  -->
-<!--   explainer = explainer,  -->
-<!--   n_labels = 1,  -->
-<!--   n_features = 4, -->
-<!--   kernel_width = 0.5 -->
-<!-- ) -->
-
-<!-- ``` -->
-
-<!-- Once the explanation model is finalized, we can plot the top four input variables from an importance perspective. The colors of the bars are important - green bars are supporting the model conclusion for the observation (they support a "yes" prediction when the value truth is "yes"), and red bars contradict (they support a "no" prediction when the value truth is "yes"). -->
-
-<!-- ```{r plot-importance, echo = TRUE, include = TRUE} -->
-
-<!-- plot_explanations(explanation) + -->
-<!--     labs(title = "LIME Feature Importance Heatmap", -->
-<!--          subtitle = "Hold Out (Test) Set, First 10 Cases Shown") -->
-
-<!-- ``` -->
-
-<!-- As you can see, for the first ten cases - the logged age values is an extremely important predictor of euthanasia. This seems about right, as age seems like it would be a strong determinant for euthanizing (either due to litters and limited space, or due to health issues at old age). -->
 
 Correlation plots show us individual relationships between each input variable and the target variable. This also stands as a good gut check to the feature importance (which, while not explicitly shown in this post, only age shows value when looking at feature importance on select observations).
 
@@ -589,7 +538,7 @@ corrr_analysis %>% arrange(desc(animal_euth))
 
 ```
 
-INterestingly, when we look at the global relationships through correlation analysis we find that `ReproductiveStatusAtIntake_UNKNOWN` comes through as fairly significant positively, while `age` maintains a strong negative relationship. We can also visualize this information to show the differences.
+Interestingly, when we look at the global relationships through correlation analysis we find that `ReproductiveStatusAtIntake_UNKNOWN` comes through as fairly significant positively, while `age` maintains a strong negative relationship. We can also visualize this information to show the differences.
 
 ```{r correlation-plot, echo = TRUE, include = TRUE} 
 
@@ -641,7 +590,7 @@ corr_plot <- corrr_analysis %>%
     geom_vline(xintercept = 0.25, color = "#A6A5A5", size = 0.75, linetype = 2) +
     # Aesthetics
     labs(title = "Animal Euthanasia Correlation Analysis",
-         subtitle = "Positive Correlations (contribute to euthanasia), Negative Correlations (prevent euthanasia)",
+         subtitle = "Positive Correlations (contribute to euthanasia), \nNegative Correlations (prevent euthanasia)",
          y = "Feature",
          x = "Correlation") + 
   theme(axis.text.y = element_blank(),
