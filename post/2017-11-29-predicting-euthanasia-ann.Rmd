@@ -19,7 +19,7 @@ knitr::opts_chunk$set(echo = FALSE,
 
 ```
 
-```{r load-up, echo = TRUE}
+```{r load-up, echo = TRUE, include = TRUE}
 
 ## Load Packages
 
@@ -66,10 +66,6 @@ theme_set(
       axis.ticks = element_blank()
     )
   )
-
-
-# # Only run the first time
-# install_keras()
 
 ## Read in Data
 
@@ -505,13 +501,13 @@ estimates_euth_tbl %>% conf_mat(truth, estimate)
 
 The way to read the confusion matrix is:
 
-+ For every animal predicted to be euthanized in our test set, 13,879 animals were in fact euthanized (these are **true positives**)
++ For every animal predicted to be euthanized in our test set, 12,597 animals were in fact euthanized (these are **true positives**)
 
-+ For every animal predicted to be euthanized, 42 actually were not (these are **false positives**)
++ For every animal predicted to be euthanized, 44 actually were not (these are **false positives**)
 
-+ For every animal not predicted to be euthanized, 15,127 animals were in fact not euthanized (these are **true negatives**)
++ For every animal not predicted to be euthanized, 15,090 animals were in fact not euthanized (these are **true negatives**)
 
-+ For every animal not predicted ot be euthanized, 4 actually were euthanized (these are **false negatives**)
++ For every animal not predicted ot be euthanized, 2 actually were euthanized (these are **false negatives**)
 
 Walking through the numbers, the model seems to have performed pretty well. We can verify that further by calculating the area under the ROC curve - which is a barometer of how well calibrated the model is to the true positive rate and true negative rates (alluded to above). Essentially, the AUC tells us how balanced the model is at identifing animals as being euthanized at the expense of incorrectly identifying those that will **not** be euthanized. 
 

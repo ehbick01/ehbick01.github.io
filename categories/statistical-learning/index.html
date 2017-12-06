@@ -50,7 +50,7 @@
 					</div>
 				</header>
 				<div class="loop__excerpt">
-					Overview and IntroductionDriven by the desire to do something as fun and interesting as this post by the folks at Decision Science, I decided to dust off some previous work done on Louisville Metro Animal Services Animal [“LMAS”] Intake and Outcome data (you can get it here). The problems are sort of the same at the core - while the linked work focuses on customer churn, this analysis will focus on what information tends to predict a given animal will be euthanized at LMAS using Artificial Neural Networks (“ANN”).
+					## Load Packages# Data manipulation and pre-processinglibrary(tidyverse)library(magrittr)library(tidyquant)library(recipes)library(rsample)# Data modelinglibrary(keras)library(lime)library(yardstick)library(corrr)library(forcats)# Data visualizationlibrary(ggiraph)library(formattable)library(DT)# Set plot themetheme_set(theme_bw(base_family = &#39;Arial&#39;, base_size = 12) +theme(plot.title = element_text(face = &#39;bold&#39;, hjust = 0),text = element_text(colour = &#39;#4e5c65&#39;),panel.background = element_rect(&#39;#ffffff&#39;),strip.background = element_rect(&#39;#ffffff&#39;, colour = &#39;white&#39;),plot.
 				</div>
 			</div>
 		</article>
