@@ -117,7 +117,7 @@
       <pubDate>Sun, 03 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/2017/12/03/using-ann-to-predict-euthanasia-in-lmas-intake/</guid>
-      <description>## Load Packages# Data manipulation and pre-processinglibrary(tidyverse)library(magrittr)library(tidyquant)library(recipes)library(rsample)# Data modelinglibrary(keras)library(lime)library(yardstick)library(corrr)library(forcats)# Data visualizationlibrary(ggiraph)library(formattable)library(DT)# Set plot themetheme_set(theme_bw(base_family = &amp;#39;Arial&amp;#39;, base_size = 12) +theme(plot.title = element_text(face = &amp;#39;bold&amp;#39;, hjust = 0),text = element_text(colour = &amp;#39;#4e5c65&amp;#39;),panel.background = element_rect(&amp;#39;#ffffff&amp;#39;),strip.background = element_rect(&amp;#39;#ffffff&amp;#39;, colour = &amp;#39;white&amp;#39;),plot.</description>
+      <description>Overview and IntroductionDriven by the desire to do something as fun and interesting as this post by the folks at Decision Science, I decided to dust off some previous work done on Louisville Metro Animal Services Animal [“LMAS”] Intake and Outcome data (you can get it here). The problems are sort of the same at the core - while the linked work focuses on customer churn, this analysis will focus on what information tends to predict a given animal will be euthanized at LMAS using Artificial Neural Networks (“ANN”).</description>
     </item>
     
     <item>

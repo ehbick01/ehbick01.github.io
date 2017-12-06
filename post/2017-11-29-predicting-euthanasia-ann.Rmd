@@ -17,7 +17,60 @@ knitr::opts_chunk$set(echo = FALSE,
                       fig.width = 7, 
                       fig.height = 5)
 
+## Load Packages
+
+# Data manipulation and pre-processing
+library(tidyverse)
+library(magrittr)
+library(tidyquant)
+library(recipes)
+library(rsample)
+
+# Data modeling
+library(keras)
+library(lime)
+library(yardstick)
+library(corrr)
+library(forcats)
+
+# Data visualization
+library(ggiraph)
+library(formattable)
+library(DT)
+
+# Set plot theme
+ggplot2::theme_set(
+  theme_bw(base_family = 'Arial', base_size = 12) +
+    theme(
+      plot.title = element_text(face = 'bold', hjust = 0),
+      text = element_text(colour = '#4e5c65'),
+      panel.background = element_rect('#ffffff'),
+      strip.background = element_rect('#ffffff', colour = 'white'),
+      plot.background = element_rect('#ffffff'),
+      panel.border = element_rect(colour = '#ffffff'),
+      panel.grid.major.x = element_blank(),
+      panel.grid.major.y = element_blank(),
+      panel.grid.minor.y = element_blank(),
+      legend.background = element_rect('#ffffff'),
+      legend.title = element_blank(),
+      legend.position = 'right',
+      legend.direction = 'vertical',
+      legend.key = element_blank(),
+      strip.text = element_text(face = 'bold', size = 10),
+      axis.text = element_text(face = 'bold', size = 9),
+      axis.title = element_blank(),
+      axis.ticks = element_blank()
+    )
+  )
+
 ```
+## Overview and Introduction
+
+Driven by the desire to do something as fun and interesting as [this post](http://www.business-science.io/business/2017/11/28/customer_churn_analysis_keras.html?utm_content=buffer53b98&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer) by the folks at Decision Science, I decided to dust off some previous work done on Louisville Metro Animal Services Animal ["LMAS"] Intake and Outcome data (you can get it [here](https://data.louisvilleky.gov/dataset/animal-service-intake-and-outcome)). The problems are sort of the same at the core - while the linked work focuses on customer churn, this analysis will focus on what information tends to predict a given animal will be euthanized at LMAS using Artificial Neural Networks ("ANN").
+
+This is also somewhat personal for me. Over the past year, our family has gone from four wonderful animals down to just one - and we are strongly considering adopting a new family member as a companion to our two kids. If I can identify an at-risk animal at LMAS, then I would love to rescue that animal ASAP. So - this is a fun project with hopefully a happy ending!
+
+Before we jump into the data, let's take a look at what tools we are loading in and our source for the data itself:
 
 ```{r load-up, echo = TRUE, include = TRUE}
 
@@ -42,31 +95,6 @@ library(ggiraph)
 library(formattable)
 library(DT)
 
-# Set plot theme
-theme_set(
-  theme_bw(base_family = 'Arial', base_size = 12) +
-    theme(
-      plot.title = element_text(face = 'bold', hjust = 0),
-      text = element_text(colour = '#4e5c65'),
-      panel.background = element_rect('#ffffff'),
-      strip.background = element_rect('#ffffff', colour = 'white'),
-      plot.background = element_rect('#ffffff'),
-      panel.border = element_rect(colour = '#ffffff'),
-      panel.grid.major.x = element_blank(),
-      panel.grid.major.y = element_blank(),
-      panel.grid.minor.y = element_blank(),
-      legend.background = element_rect('#ffffff'),
-      legend.title = element_blank(),
-      legend.position = 'right',
-      legend.direction = 'vertical',
-      legend.key = element_blank(),
-      strip.text = element_text(face = 'bold', size = 10),
-      axis.text = element_text(face = 'bold', size = 9),
-      axis.title = element_blank(),
-      axis.ticks = element_blank()
-    )
-  )
-
 ## Read in Data
 
 # Read in LMAS data
@@ -74,13 +102,7 @@ lmas_data_raw <- read_csv("https://data.louisvilleky.gov/sites/default/files/Ani
 
 ```
 
-## Overview and Introduction
-
-Driven by the desire to do something as fun and interesting as [this post](http://www.business-science.io/business/2017/11/28/customer_churn_analysis_keras.html?utm_content=buffer53b98&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer) by the folks at Decision Science, I decided to dust off some previous work done on Louisville Metro Animal Services Animal ["LMAS"] Intake and Outcome data (you can get it [here](https://data.louisvilleky.gov/dataset/animal-service-intake-and-outcome)). The problems are sort of the same at the core - while the linked work focuses on customer churn, this analysis will focus on what information tends to predict a given animal will be euthanized at LMAS using Artificial Neural Networks ("ANN").
-
-This is also somewhat personal for me. Over the past year, our family has gone from four wonderful animals down to just one - and we are strongly considering adopting a new family member as a companion to our two kids. If I can identify an at-risk animal at LMAS, then I would love to rescue that animal ASAP. So - this is a fun project with hopefully a happy ending!
-
-First up - let's take a look at the data. The file contains roughly 20 columns of information of every animal that has come through the doors of LMAS since the early 2000s through this year. We have everything from the traditional cats and dogs all the way to the less-than-traditional livestock and rodents. In total, there are `r nrow(lmas_data_raw) %>% comma(0)` rows of data here - meaning over that timeframe, that many animals have been brought into the LMAS system.
+Now, let's take a look at the data. The file contains roughly 20 columns of information of every animal that has come through the doors of LMAS since the early 2000s through this year. We have everything from the traditional cats and dogs all the way to the less-than-traditional livestock and rodents. In total, there are `r nrow(lmas_data_raw) %>% comma(0)` rows of data here - meaning over that timeframe, that many animals have been brought into the LMAS system.
 
 Of those that have come in, `r nrow(lmas_data_raw %>% filter(OutcomeType == "EUTH")) %>% comma(0)` have been euthanized through the years. The goal of this work is to figure out why - and try and keep it from happening at least one more time.
 
